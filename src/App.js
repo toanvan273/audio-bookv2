@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css'
 import styled from 'styled-components'
 import * as type from './data'
+// video
+// import video1 from '../public/video/secretsucces.mp4'
 // ui
 import Title from './ui/Title'
 import TitleBold from './ui/TitleBold'
@@ -12,32 +14,40 @@ import Benifit from './ui/Benifit'
 import ImageSigle from './ui/ImageSingle'
 import Iwant from './ui/Iwant'
 import CountDown from './ui/CountDown'
+import VideoControl from './ui/VideoControl'
 // img
 import ic_6 from './img/6.jpg'
 import ic_4 from './img/4.png'
-import ic_9 from './img/9.jpg'
+import bg from './img/bg.jpg'
 import ic_22 from './img/22.jpg'
 import ic_33 from './img/33.png'
 import ic_a from './img/a.jpg'
 import ic_77 from './img/77.jpg'
+const video1 = 'video/success.mp4'
 const Bound = styled.div`
     display:flex;
     flex-direction:column;
     /* height:100%; */
     /* min-width: 1024px; */
     margin: 0 auto;
+    .header{
+        // background-image:url(${bg});
+    }
     span {
         color:rgb(255, 120, 0);
     }
     p{
         font-size: 20px;
         font-weight: 900;
+        text-align: justify;
+    font-family: serif;
     }
     h3{
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
+        text-align: justify;
     }
     .line{
         border: 1px solid #dbd9d9;
@@ -47,7 +57,10 @@ const Bound = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 2px solid red;
+        background: #f2f2f2;
+        border: none;
+        padding: 0 10px;
+        text-align: center;
     border-radius: 20px;
     }
     .main-title{
@@ -56,7 +69,7 @@ const Bound = styled.div`
         font-family: inherit;
         text-transform: uppercase;
         line-height: 30px;
-        letter-spacing: 1px;
+        text-align: justify;
     }
 `
 class App extends Component {
@@ -67,53 +80,58 @@ class App extends Component {
     render() {
         return (
             <Bound>
-                <h1 className='main-title'>
-                    Chiếc USB này chứa những quyển sách vĩ đại về kinh doanh giúp đạt được giấc mơ làm giàu của bất kì ai may mắn sở hữu nó
+                <div className='header'>
+
+
+                    <h1 className='main-title'>
+                        Chiếc USB này chứa những quyển sách vĩ đại về kinh doanh giúp đạt được giấc mơ làm giàu của bất kì ai may mắn sở hữu nó
                     <span> 80 audiobooks kinh điển nhất do tạp chí New York Times bình chọn. </span>
-                </h1>
-                <ul>
-                    <li>
-                        <p>
-                            <span>18 cuốn sách </span>
-                            hay nhất về
+                    </h1>
+                    <ul>
+                        <li>
+                            <p>
+                                <span>18 cuốn sách </span>
+                                hay nhất về
                            <span> TƯ DUY KINH DOANH </span>
-                            khác biệt của người thành công
+                                khác biệt của người thành công
                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span> 19 cuốn sách </span>
-                            19 cuốn sách bán chạy nhất về làm chủ và đạt được thịnh vượng
-                           <span>TÀI CHÍNH </span>
-                            từ các doanh nhân và nhà đầu tư sừng sỏ
+                        </li>
+                        <li>
+                            <p>
+                                <span> 19 cuốn sách </span>
+                                bán chạy nhất về làm chủ và đạt được thịnh vượng
+                           <span> TÀI CHÍNH </span>
+                                từ các doanh nhân và nhà đầu tư sừng sỏ
                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span> 8 cuốn sách </span>
-                            tiêu biểu VỀ
-                            <span> MARKETING & SALES </span>
-                            , giúp bán được nhiều hàng, tạo dựng thương hiệu lớn
+                        </li>
+                        <li>
+                            <p>
+                                <span> 8 cuốn sách </span>
+                                tiêu biểu VỀ
+                            <span> MARKETING & SALES</span>
+                                , giúp bán được nhiều hàng, tạo dựng thương hiệu lớn
                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span>13 cuốn sách </span>
-                            kinh điển VỀ
-                             <span> QUẢN TRỊ </span>
-                            , giúp bạn quản lý thật tốt công việc kinh doanh của mình
+                        </li>
+                        <li>
+                            <p>
+                                <span>14 cuốn sách </span>
+                                kinh điển VỀ
+                             <span> QUẢN TRỊ</span>
+                                , giúp bạn quản lý thật tốt công việc kinh doanh của mình
                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span> 7 câu chuyện </span>
-                            truyền cảm hứng từ các tập đoàn lớn và doanh nhân thành công nhất
+                        </li>
+                        <li>
+                            <p>
+                                <span> 7 câu chuyện </span>
+                                truyền cảm hứng từ các tập đoàn lớn và doanh nhân thành công nhất
                    </p>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
                 <div className='line'></div>
                 <h3>CÓ GÌ TRONG USB SÁCH NÓI NÀY ?</h3>
-                <ImageSigle imgLink={ic_6} />
+                <VideoControl video={video1} />
+                {/* <ImageSigle imgLink={ic_6} /> */}
                 <Title number={18}
                     title={"CUỐN SÁCH VỀ TƯ DUY KINH DOANH "}
                 />
@@ -169,7 +187,7 @@ class App extends Component {
                         })}
                     </ul>
                 </div>
-                <ImageSigle imgLink={ic_9} />
+                <ImageSigle imgLink={ic_6} />
                 <Title number={16}
                     title={"SÁCH LỜI KHUYÊN KINH DOANH​"}
                 />
@@ -197,7 +215,7 @@ class App extends Component {
                     </ul>
                 </div>
                 <TitleBold
-                    title={'Hãy gọi: 0332 138 583 để mua USB ngay!!!'}
+                    title={'Hãy gọi: 033 213 8583 để mua USB ngay!!!'}
                     sub={"NGHE THỬ SÁCH NÓI "} />
                 <ImageSigle imgLink={ic_22} />
                 <Audio
@@ -250,7 +268,7 @@ class App extends Component {
                     title={'NGẮN GỌN & DỄ HIỂU'}
                     content={'Chỉ với số tiền rất nhỏ mà có thể được sở hữu gần 100 cuốn sách best sellers của mọi thời đại (tổng trị giá trên Amazon là gần 1000 USD) (và có thêm 1 chiếc USB vô cùng hữu dụng để phục vụ cho công việc), một sự đầu tư quá xứng đáng'}
                 />
-                  <ImageSigle imgLink={ic_77} />
+                <ImageSigle imgLink={ic_77} />
                 <TitleIn
                     title={'Cảm nhận khách hàng'}
                     sub={'Ý kiến khách hàng đã mua và nghe USB sách nói của chúng tôi'}
@@ -260,13 +278,13 @@ class App extends Component {
                     content={'Trước đây mỗi lần ra quyết định trong công việc kinh doanh của mình, tôi đều rất trần trừ, phải so đo tính toán rất nhiều lần rồi mới ra quyết định. Từ khi nghe audio book tôi đã tích lũy được rất nhiều kinh nghiệm và áp dụng được nhiều trong công việc kinh doanh. Đặc biệt sự quyết đoán trong công việc của tôi đã được cải thiện rõ rệt.'}
                 />
                 <div className='footer' id="content">
-                    <p>Hotline: 0332 138 583</p>
+                    <p>Hotline: 033 213 8583</p>
                     <p>Đ/c: Số 71, Đa Sỹ, Kiến Hưng, Hà Đông, Hà Nội</p>
                     <h4>HÃY MUA NGAY BỘ SÁCH SỐ 1 THẾ GIỚI VÀ LẮNG NGHE CÁC CÂU CHUYỆN THÀNH CÔNG HÀNG NGÀY.</h4>
                     <h4> TƯƠNG LAI ĐANG HOÀN TOÀN Ở TRONG TAY BẠN!</h4>
                     <h5> THỜI ĐIỂM BẠN RA QUYẾT ĐỊNH.</h5>
                     <h5>LÀ LÚC VẬN MỆNH CỦA BẠN ĐƯỢC HÌNH THÀNH!</h5>
-                    
+
                 </div>
                 <h1>Copyright © 2019: USB sách nói - Bí Quyết Thành Công</h1>
             </Bound>

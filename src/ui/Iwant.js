@@ -7,13 +7,20 @@ const Bound = styled.div`
         align-items: center;
        .trick{
         width: 90%;
-        text-align: center;
-        background: green;
+      
         border-radius: 10px;
-        border: 3px solid #b353aa;
-        color: #ffd000;
+       
         cursor: pointer;
         margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #fecb27;
+        color: #000000;
+        border: none;
+        width: 100%;
+        padding: 10px;
        }
        
 `

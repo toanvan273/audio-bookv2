@@ -9,6 +9,7 @@ const Bound = styled.div`
         margin-top: 15px;
         b{
             font-size: 20px;
+            text-align: justify
         }
         h3{
             margin-top: 5px;

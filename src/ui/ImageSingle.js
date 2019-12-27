@@ -5,8 +5,9 @@ const Bound = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 20px;
         img{
-            width: 590px;
+            width: 100%;
             border: 5px solid #aa721a;
         }
        

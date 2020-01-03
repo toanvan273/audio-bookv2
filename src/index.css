@@ -21,3 +21,6 @@ code {
  html{
    height: 100%;
  }
+p{
+  margin: 0;
+}

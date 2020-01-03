@@ -15,6 +15,7 @@ import ImageSigle from './ui/ImageSingle'
 import Iwant from './ui/Iwant'
 import CountDown from './ui/CountDown'
 import VideoControl from './ui/VideoControl'
+import FormRegister from './ui/FormRegister'
 // img
 import ic_6 from './img/6.jpg'
 import ic_4 from './img/4.png'
@@ -277,6 +278,7 @@ class App extends Component {
                     people={'Chị Nguyễn Thị Thanh Hà'}
                     content={'Trước đây mỗi lần ra quyết định trong công việc kinh doanh của mình, tôi đều rất trần trừ, phải so đo tính toán rất nhiều lần rồi mới ra quyết định. Từ khi nghe audio book tôi đã tích lũy được rất nhiều kinh nghiệm và áp dụng được nhiều trong công việc kinh doanh. Đặc biệt sự quyết đoán trong công việc của tôi đã được cải thiện rõ rệt.'}
                 />
+                <FormRegister />
                 <div className='footer' id="content">
                     <p>Hotline: 033 213 8583</p>
                     <p>Đ/c: Số 71, Đa Sỹ, Kiến Hưng, Hà Đông, Hà Nội</p>

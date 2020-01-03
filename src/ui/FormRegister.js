@@ -39,7 +39,7 @@ const Bound = styled.div`
         justify-content: center;
         img{
             width: 100%;
-            /* animation: mymove 1s infinite; */
+            animation: mymove 1s infinite;
         }
     }
     .form-content{
@@ -59,7 +59,7 @@ const Bound = styled.div`
                 align-items: center;
                 padding: 0 20px;
                 img{
-                    /* animation: tada 1s infinite; */
+                    animation: tada 1s infinite; 
                 }
                 .title{
                     font-size: 26px;

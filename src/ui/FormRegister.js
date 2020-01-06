@@ -110,6 +110,43 @@ const Bound = styled.div`
                         font-weight: 600
                     }
                 }
+                h4{
+                    color: #6d6d6d;
+                    font-weight: 300;
+                    font-size: 20px;
+                    font-family: serif;
+                    text-align: center;
+                    span{
+                        font-weight: 600;
+                        color: #836d6d;
+                    }
+                }
+                form{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    input{
+                        width: 100%;
+                        border-radius: 25px;
+                        box-sizing: border-box;
+                        padding-left: 20px;
+                        border: 1px solid gray;
+                        height: 45px;
+                        margin-bottom: 10px;
+                        font-size: 18px;
+                        outline: none;
+                    }
+                    button{
+                        color: #000;
+                        background-color: #fecb27;
+                        border: none;
+                        border-radius: 20px;
+                        height: 40px;
+                        width: 80%;
+                        cursor: pointer;
+                        font-weight: 700;
+                    }
+                }
             }
         }
     }
@@ -148,17 +185,26 @@ class FormRegister extends Component {
                                 <div className='tranfer'>
                                     <p>
                                         <FontAwesomeIcon icon={faLaptop} />
-                                       <span> Máy tính</span>
-                                        </p>
+                                        <span> Máy tính</span>
+                                    </p>
                                     <p>
                                         <FontAwesomeIcon icon={faMobile} />
-                                       <span> Điện thoại</span>
-                                        </p>
+                                        <span> Điện thoại</span>
+                                    </p>
                                     <p>
                                         <FontAwesomeIcon icon={faCar} />
-                                       <span> Xe hơi</span>
-                                        </p>
+                                        <span> Xe hơi</span>
+                                    </p>
                                 </div>
+                                {/* <h4>Chỉ cần để lại thông tin, sẽ có nhân viên tư vấn gọi điện lại cho bạn để xác nhận đơn hàng(trong giờ hành chính)</h4>
+                                <form>
+                                    <input type="text" placeholder='Họ và tên' />
+                                    <input type='text' placeholder='Số điện thoại' />
+                                    <input type='text' placeholder='Địa chỉ nhận USB' />
+                                    <h4>"Thời điểm bạn đưa ra <span>quyết định </span>
+                                        là lúc <span>vận mệnh</span> của bạn được hình thành."</h4>
+                                    <button type='submit'>ĐẶT MUA USB</button>
+                                </form> */}
                             </div>
                         </div>
                     </div>

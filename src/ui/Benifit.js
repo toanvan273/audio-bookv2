@@ -23,7 +23,10 @@ class App extends Component {
         return (
             <Bound>
                 <h3>{title}</h3>
-                <b>{content}</b>
+                {content &&
+                    <b>{content}</b>
+                }
+
             </Bound>
         );
     }

@@ -153,7 +153,30 @@ const Bound = styled.div`
    
 `
 class FormRegister extends Component {
+    state={
 
+    }
+    getName=e=>{
+        this.setState({
+            name:e.target.value
+        })
+    }
+    getPhone=e=>{
+        this.setState({
+            phone: e.target.value
+        })
+    }
+    getAdd=e=>{
+        this.setState({
+            add: e.target.value
+        })
+    }
+    onSubmit=e=>{
+        e.preventDefault()
+        const {name, phone, add} = this.state
+        console.log(name,phone,add);
+        
+    }
     render() {
         return (
             <Bound >
@@ -196,15 +219,21 @@ class FormRegister extends Component {
                                         <span> Xe hơi</span>
                                     </p>
                                 </div>
-                                {/* <h4>Chỉ cần để lại thông tin, sẽ có nhân viên tư vấn gọi điện lại cho bạn để xác nhận đơn hàng(trong giờ hành chính)</h4>
-                                <form>
-                                    <input type="text" placeholder='Họ và tên' />
-                                    <input type='text' placeholder='Số điện thoại' />
-                                    <input type='text' placeholder='Địa chỉ nhận USB' />
+                                <h4>Chỉ cần để lại thông tin, sẽ có nhân viên tư vấn gọi điện lại cho bạn để xác nhận đơn hàng(trong giờ hành chính)</h4>
+                                <form onSubmit={this.onSubmit}>
+                                    <input
+                                    onChange={this.getName}
+                                    type="text" placeholder='Họ và tên' />
+                                    <input
+                                    onChange={this.getPhone}
+                                    type='text' placeholder='Số điện thoại' />
+                                    <input
+                                    onChange={this.getAdd}
+                                    type='text' placeholder='Địa chỉ nhận USB' />
                                     <h4>"Thời điểm bạn đưa ra <span>quyết định </span>
                                         là lúc <span>vận mệnh</span> của bạn được hình thành."</h4>
                                     <button type='submit'>ĐẶT MUA USB</button>
-                                </form> */}
+                                </form>
                             </div>
                         </div>
                     </div>

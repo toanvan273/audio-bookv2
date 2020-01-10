@@ -1,0 +1,5 @@
+export const SHEET_ID = '1I_xlaLhP3NEivgsjGQeY3ZXSzq1c7U1Vx0hB6KNUNlA'
+export const CLIENT_ID = '831053051874-vebujbjt56tn4cttdl74coacjufdoh81.apps.googleusercontent.com'
+export const API_KEY = 'AIzaSyBwq-z99Hg10-N8Gw2L9hVOKBinsCIezWA'
+export const SCOPE = 'https://www.googleapis.com/auth/spreadsheets'
+export const CLIENT_SECRET = 'Kl9KDezV-NjtfsKkXX5N7Crj'

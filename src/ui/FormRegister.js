@@ -5,6 +5,7 @@ import usb from '../img/usb.png'
 import neu from '../img/n.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMobile, faLaptop, faCar } from '@fortawesome/free-solid-svg-icons'
+import { gapi } from 'gapi-script'
 const Bound = styled.div`
     display: flex;
     background: url(${bgform});
@@ -152,30 +153,79 @@ const Bound = styled.div`
     }
    
 `
+const SPREADSHEET_ID = '1I_xlaLhP3NEivgsjGQeY3ZXSzq1c7U1Vx0hB6KNUNlA'
+const CLIENT_ID = '831053051874-vebujbjt56tn4cttdl74coacjufdoh81.apps.googleusercontent.com'
+const API_KEY = 'AIzaSyBwq-z99Hg10-N8Gw2L9hVOKBinsCIezWA'
+const SCOPE = 'https://www.googleapis.com/auth/spreadsheets'
+// const CLIENT_SECRET = 'Kl9KDezV-NjtfsKkXX5N7Crj'
 class FormRegister extends Component {
-    state={
-
+    state = {}
+    componentDidMount() { //called automatically by React
+        // const script = document.createElement("script");
+        // script.src = "https://apis.google.com/js/client.js";
+        this.handleClientLoad();
     }
-    getName=e=>{
+
+    handleClientLoad = () => { //initialize the Google API
+        gapi.load('client:auth2', this.initClient);
+    }
+    initClient = () => { //provide the authentication credentials you set up in the Google developer console
+        gapi.client.init({
+            'apiKey': API_KEY,
+            'clientId': CLIENT_ID,
+            'scope': SCOPE,
+            'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+        }).then(() => {
+            gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSignInStatus); //add a function called `updateSignInStatus` if you want to do something once a user is logged in with Google
+            this.updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+        });
+    }
+    onFormSubmit = (submissionValues) => {
+        const params = {
+            // The ID of the spreadsheet to update.
+            spreadsheetId: SPREADSHEET_ID,
+            // The A1 notation of a range to search for a logical table of data.Values will be appended after the last row of the table.
+            range: 'Sheet1', //this is the default spreadsheet name, so unless you've changed it, or are submitting to multiple sheets, you can leave this
+            // How the input data should be interpreted.
+            valueInputOption: 'RAW', //RAW = if no conversion or formatting of submitted data is needed. Otherwise USER_ENTERED
+            // How the input data should be inserted.
+            insertDataOption: 'INSERT_ROWS', //Choose OVERWRITE OR INSERT_ROWS
+        };
+
+        const valueRangeBody = {
+            'majorDimension': 'ROWS', //log each entry as a new row (vs column)
+            'values': [submissionValues] //convert the object's values to an array
+        };
+
+        let request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
+        request.then(function (response) {
+            // TODO: Insert desired response behaviour on submission
+            console.log(response.result);
+        }, function (reason) {
+            console.error('error: ' + reason.result.error.message);
+        });
+    }
+
+    getName = e => {
         this.setState({
-            name:e.target.value
+            name: e.target.value
         })
     }
-    getPhone=e=>{
+    getPhone = e => {
         this.setState({
             phone: e.target.value
         })
     }
-    getAdd=e=>{
+    getAdd = e => {
         this.setState({
             add: e.target.value
         })
     }
-    onSubmit=e=>{
+    onSubmit = e => {
         e.preventDefault()
-        const {name, phone, add} = this.state
-        console.log(name,phone,add);
-        
+        const { name, phone, add } = this.state
+        console.log(name, phone, add);
+
     }
     render() {
         return (
@@ -220,16 +270,16 @@ class FormRegister extends Component {
                                     </p>
                                 </div>
                                 <h4>Chỉ cần để lại thông tin, sẽ có nhân viên tư vấn gọi điện lại cho bạn để xác nhận đơn hàng(trong giờ hành chính)</h4>
-                                <form onSubmit={this.onSubmit}>
+                                <form onSubmit={this.onFormSubmit}>
                                     <input
-                                    onChange={this.getName}
-                                    type="text" placeholder='Họ và tên' />
+                                        onChange={this.getName}
+                                        type="text" placeholder='Họ và tên' />
                                     <input
-                                    onChange={this.getPhone}
-                                    type='text' placeholder='Số điện thoại' />
+                                        onChange={this.getPhone}
+                                        type='text' placeholder='Số điện thoại' />
                                     <input
-                                    onChange={this.getAdd}
-                                    type='text' placeholder='Địa chỉ nhận USB' />
+                                        onChange={this.getAdd}
+                                        type='text' placeholder='Địa chỉ nhận USB' />
                                     <h4>"Thời điểm bạn đưa ra <span>quyết định </span>
                                         là lúc <span>vận mệnh</span> của bạn được hình thành."</h4>
                                     <button type='submit'>ĐẶT MUA USB</button>

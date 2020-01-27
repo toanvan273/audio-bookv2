@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-import bgform from '../img/bgform.jpg'
-import usb from '../img/usb.png'
-import neu from '../img/n.png'
+import bgform from '../../img/bgform.jpg'
+import usb from '../../img/usb.png'
+import neu from '../../img/n.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMobile, faLaptop, faCar } from '@fortawesome/free-solid-svg-icons'
 import { gapi } from 'gapi-script'
@@ -153,8 +153,8 @@ const Bound = styled.div`
     }
    
 `
-const SPREADSHEET_ID = '1I_xlaLhP3NEivgsjGQeY3ZXSzq1c7U1Vx0hB6KNUNlA'
-const CLIENT_ID = '831053051874-vebujbjt56tn4cttdl74coacjufdoh81.apps.googleusercontent.com'
+const SPREADSHEET_ID = '1V2aaOzxI9EYw5osxXlKXxHXB5g6zQiKSP_g8bsfJgos'
+const CLIENT_ID = '649959336600-o4mu6fd4ebvc4h1hbqhbdp0ntkukiiva.apps.googleusercontent.com'
 const API_KEY = 'AIzaSyBwq-z99Hg10-N8Gw2L9hVOKBinsCIezWA'
 const SCOPE = 'https://www.googleapis.com/auth/spreadsheets'
 // const CLIENT_SECRET = 'Kl9KDezV-NjtfsKkXX5N7Crj'

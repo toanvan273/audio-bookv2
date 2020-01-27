@@ -1,0 +1,1 @@
+export const host = 'http://5cd808170cc5100014f1e32e.mockapi.io/users'

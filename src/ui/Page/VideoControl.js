@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-import thumnal from '../img/coverimg.jpg'
-import ic_play from '../img/555.png'
+import thumnal from '../../img/coverimg.jpg'
+import ic_play from '../../img/555.png'
 const Bound = styled.div`
         display: flex;
         justify-content: center;

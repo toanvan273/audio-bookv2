@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-import usbsubject from '../img/usbsubject.jpg'
-import ItemPolicy from '../ui/control/ItemPolicy'
-import tranfer from '../img/icon/tranfer.png'
-import protech from '../img/icon/protech.png'
-import twoyear from '../img/icon/twoyear.png'
-import suport from '../img/icon/suport.png'
+import usbsubject from '../../img/usbsubject.jpg'
+import ItemPolicy from '../control/ItemPolicy'
+import tranfer from '../../img/icon/tranfer.png'
+import protech from '../../img/icon/protech.png'
+import twoyear from '../../img/icon/twoyear.png'
+import suport from '../../img/icon/suport.png'
 const Bound = styled.div`
     display: grid;
     grid-template-columns: 60% 39%;

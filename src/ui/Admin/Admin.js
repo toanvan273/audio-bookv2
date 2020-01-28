@@ -15,6 +15,9 @@ const Admin = props => {
         if (dataLogin){
             setDataLogin(dataLogin)
         }
+        return ()=>{
+            localStorage.clear()
+        }
     }, [])
     const getAdmin = data => {
         if (data) {

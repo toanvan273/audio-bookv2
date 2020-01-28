@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css'
-import styled from 'styled-components'
 import { Route, Switch, Redirect } from "react-router-dom";
 // ui
 import AdvertiseScreen from './ui/AdvertiseScreen'
@@ -23,6 +22,7 @@ class App extends Component {
                             <Admin />
                         )
                     }} />
+                <Redirect to='/' />
             </Switch>
         );
     }

@@ -20,7 +20,7 @@ export const getUserAction = () => async dispatch => {
         })
     }
 }
-export const addNewUserAction = (data) => async dispatch => {
+export const addUserAction = (data) => async dispatch => {
     const dataQuery = {
         name:data.name,
         phone:data.phone,

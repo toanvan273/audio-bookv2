@@ -1,15 +1,35 @@
-import React,  { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import User from './User'
+import Login from './Login'
 const Bound = styled.div`
     display:flex;
     flex-direction:column;
     flex: 1;
 `
+
 const Admin = props => {
+    const [dataLogin, setDataLogin] = useState(null)
+    useEffect(() => {
+        const dataLogin = JSON.parse(localStorage.getItem('dataLogin'))
+        if (dataLogin){
+            setDataLogin(dataLogin)
+        }
+    }, [])
+    const getAdmin = data => {
+        if (data) {
+            localStorage.setItem('dataLogin', JSON.stringify(data))
+            setDataLogin(data)
+        }
+    }
     return (
         <Bound>
-           <User />
+            {dataLogin ?
+                <User />
+                :
+                <Login getAdmin={getAdmin} />
+            }
+
         </Bound>
     )
 }

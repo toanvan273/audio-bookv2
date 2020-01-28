@@ -5,7 +5,8 @@ import usb from '../../img/usb.png'
 import neu from '../../img/n.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMobile, faLaptop, faCar } from '@fortawesome/free-solid-svg-icons'
-import { gapi } from 'gapi-script'
+import { connect } from 'react-redux'
+import { addUserAction } from '../../action/userAction'
 const Bound = styled.div`
     display: flex;
     background: url(${bgform});
@@ -148,64 +149,24 @@ const Bound = styled.div`
                         font-weight: 700;
                     }
                 }
+                .submited{
+                    h2{
+                        color: #6d6d6d;
+                        font-weight: 600;
+                        text-align: center;
+                        font-size: 28px;
+                    }
+                }
             }
         }
     }
    
 `
-const SPREADSHEET_ID = '1V2aaOzxI9EYw5osxXlKXxHXB5g6zQiKSP_g8bsfJgos'
-const CLIENT_ID = '649959336600-o4mu6fd4ebvc4h1hbqhbdp0ntkukiiva.apps.googleusercontent.com'
-const API_KEY = 'AIzaSyBwq-z99Hg10-N8Gw2L9hVOKBinsCIezWA'
-const SCOPE = 'https://www.googleapis.com/auth/spreadsheets'
-// const CLIENT_SECRET = 'Kl9KDezV-NjtfsKkXX5N7Crj'
+
 class FormRegister extends Component {
-    state = {}
-    componentDidMount() { //called automatically by React
-        // const script = document.createElement("script");
-        // script.src = "https://apis.google.com/js/client.js";
-        this.handleClientLoad();
+    state = {
+        isSubmit: false
     }
-
-    handleClientLoad = () => { //initialize the Google API
-        gapi.load('client:auth2', this.initClient);
-    }
-    initClient = () => { //provide the authentication credentials you set up in the Google developer console
-        gapi.client.init({
-            'apiKey': API_KEY,
-            'clientId': CLIENT_ID,
-            'scope': SCOPE,
-            'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-        }).then(() => {
-            gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSignInStatus); //add a function called `updateSignInStatus` if you want to do something once a user is logged in with Google
-            this.updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-        });
-    }
-    onFormSubmit = (submissionValues) => {
-        const params = {
-            // The ID of the spreadsheet to update.
-            spreadsheetId: SPREADSHEET_ID,
-            // The A1 notation of a range to search for a logical table of data.Values will be appended after the last row of the table.
-            range: 'Sheet1', //this is the default spreadsheet name, so unless you've changed it, or are submitting to multiple sheets, you can leave this
-            // How the input data should be interpreted.
-            valueInputOption: 'RAW', //RAW = if no conversion or formatting of submitted data is needed. Otherwise USER_ENTERED
-            // How the input data should be inserted.
-            insertDataOption: 'INSERT_ROWS', //Choose OVERWRITE OR INSERT_ROWS
-        };
-
-        const valueRangeBody = {
-            'majorDimension': 'ROWS', //log each entry as a new row (vs column)
-            'values': [submissionValues] //convert the object's values to an array
-        };
-
-        let request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
-        request.then(function (response) {
-            // TODO: Insert desired response behaviour on submission
-            console.log(response.result);
-        }, function (reason) {
-            console.error('error: ' + reason.result.error.message);
-        });
-    }
-
     getName = e => {
         this.setState({
             name: e.target.value
@@ -221,13 +182,17 @@ class FormRegister extends Component {
             add: e.target.value
         })
     }
-    onSubmit = e => {
+    onFormSubmit = e => {
         e.preventDefault()
         const { name, phone, add } = this.state
-        console.log(name, phone, add);
-
+        const data = { name, phone, address: add, email: null }
+        this.props.addUser(data)
+        this.setState({
+            isSubmit:true
+        })
     }
     render() {
+        const { isSubmit } = this.state
         return (
             <Bound >
                 <div className='grid-container'>
@@ -269,21 +234,33 @@ class FormRegister extends Component {
                                         <span> Xe hơi</span>
                                     </p>
                                 </div>
-                                <h4>Chỉ cần để lại thông tin, sẽ có nhân viên tư vấn gọi điện lại cho bạn để xác nhận đơn hàng(trong giờ hành chính)</h4>
-                                <form onSubmit={this.onFormSubmit}>
-                                    <input
-                                        onChange={this.getName}
-                                        type="text" placeholder='Họ và tên' />
-                                    <input
-                                        onChange={this.getPhone}
-                                        type='text' placeholder='Số điện thoại' />
-                                    <input
-                                        onChange={this.getAdd}
-                                        type='text' placeholder='Địa chỉ nhận USB' />
-                                    <h4>"Thời điểm bạn đưa ra <span>quyết định </span>
-                                        là lúc <span>vận mệnh</span> của bạn được hình thành."</h4>
-                                    <button type='submit'>ĐẶT MUA USB</button>
-                                </form>
+                                {!isSubmit ?
+                                    <React.Fragment>
+                                        <h4>Chỉ cần để lại thông tin, sẽ có nhân viên tư vấn gọi điện lại cho bạn để xác nhận đơn hàng(trong giờ hành chính)</h4>
+                                        <form onSubmit={this.onFormSubmit}>
+                                            <input
+                                                onChange={this.getName}
+                                                type="text" placeholder='Họ và tên' />
+                                            <input
+                                                onChange={this.getPhone}
+                                                type='text' placeholder='Số điện thoại' />
+                                            <input
+                                                onChange={this.getAdd}
+                                                type='text' placeholder='Địa chỉ nhận USB' />
+                                            <h4>"Thời điểm bạn đưa ra <span>quyết định </span>
+                                                là lúc <span>vận mệnh</span> của bạn được hình thành."</h4>
+                                            <button type='submit'>ĐẶT MUA USB</button>
+                                        </form>
+                                    </React.Fragment>
+                                    :
+                                    <React.Fragment>
+                                        <div className='submited'>
+                                            <h2>Cám ơn bạn đã để lại thông tin.</h2>
+                                        </div>
+                                    </React.Fragment>
+
+                                }
+
                             </div>
                         </div>
                     </div>
@@ -293,5 +270,7 @@ class FormRegister extends Component {
         );
     }
 }
-
-export default FormRegister;
+const mapDispatchToProps = (dispatch) => ({
+    addUser: (data) => dispatch(addUserAction(data))
+})
+export default connect(null, mapDispatchToProps)(FormRegister);

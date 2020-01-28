@@ -16,6 +16,7 @@ const Bound = styled.div`
             padding-left: 10px;
             border-radius: 2px;
             border: 1px solid gray;
+            height:30px;
         }
     }
     .noti{

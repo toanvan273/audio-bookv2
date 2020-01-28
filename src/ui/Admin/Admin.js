@@ -16,9 +16,11 @@ const Admin = props => {
             setDataLogin(dataLogin)
         }
         return ()=>{
+            console.log('un mount');
             localStorage.clear()
         }
     }, [])
+   
     const getAdmin = data => {
         if (data) {
             localStorage.setItem('dataLogin', JSON.stringify(data))

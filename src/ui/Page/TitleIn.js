@@ -10,6 +10,9 @@ const Bound = styled.div`
         b{
             font-size: 20px;
             font-style: italic;
+            @media (max-width:960px){
+            font-size: 18px;
+            }
         }
         h3{
             margin-top: 5px;

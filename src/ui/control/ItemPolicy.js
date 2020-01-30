@@ -17,6 +17,13 @@ const Bound = styled.div`
             margin: 0;
         }
     }
+    .datalink{
+        @media (max-width:960px){
+           p{
+            font-size: 16px;
+           }
+        }
+    }
 `
 class ItemPolicy extends Component {
 

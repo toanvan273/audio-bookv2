@@ -16,7 +16,6 @@ const Admin = props => {
             setDataLogin(dataLogin)
         }
         return ()=>{
-            console.log('un mount');
             localStorage.clear()
         }
     }, [])

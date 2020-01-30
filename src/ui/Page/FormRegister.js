@@ -34,11 +34,17 @@ const Bound = styled.div`
         grid-template-columns: 1fr 1fr;
         width: 100%;
         grid-gap: 20px;
+        @media (max-width:960px){
+            display: flex;
+        }
     }
     .image-content{
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width:960px){
+            display: none;
+        }
         img{
             width: 100%;
             animation: mymove 1s infinite;
@@ -48,6 +54,9 @@ const Bound = styled.div`
         display: flex;
         padding: 20px;
         box-sizing: border-box;
+        @media (max-width:960px){
+            padding: 10px;
+        }
         .main-form{
             display: flex;
             flex:1;
@@ -56,10 +65,16 @@ const Bound = styled.div`
             overflow: hidden;
             padding: 20px 0;
             flex-direction: column;
+            @media (max-width:960px){
+                padding: 10px 0;
+            }
             .header{
                 display: flex;
                 align-items: center;
                 padding: 0 20px;
+                @media (max-width:960px){
+                    display: none;
+                }
                 img{
                     animation: tada 1s infinite; 
                 }
@@ -77,12 +92,21 @@ const Bound = styled.div`
                 background: #fecb27;
                 font-size: 26px;
                 color: #000;
+                @media (max-width:960px){
+                    margin: 0px;
+                }
             }
             .form{
                 padding: 0 20px;
+                @media (max-width:960px){
+                    padding: 0 10px;
+                }
                 .price{
                     font-size: 3.2rem;
                     text-align: center;
+                    @media (max-width:960px){
+                        font-size: 34px;
+                    }
                 }
                 .old{
                     text-decoration: line-through;
@@ -118,6 +142,9 @@ const Bound = styled.div`
                     font-size: 20px;
                     font-family: serif;
                     text-align: center;
+                    @media (max-width:960px){
+                        margin: 15px 0;
+                    }
                     span{
                         font-weight: 600;
                         color: #836d6d;
@@ -147,6 +174,11 @@ const Bound = styled.div`
                         width: 80%;
                         cursor: pointer;
                         font-weight: 700;
+                    }
+                    @media (max-width:960px){
+                        h4{
+                            display:none;
+                        }
                     }
                 }
                 .submited{

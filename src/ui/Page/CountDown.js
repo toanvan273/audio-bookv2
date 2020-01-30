@@ -23,6 +23,9 @@ const Bound = styled.div`
             border-radius: 5px;
             text-transform: uppercase;
             font-size: 36px;
+            @media (max-width:960px){
+                font-size: 30px;
+            }
         }
     }
 `

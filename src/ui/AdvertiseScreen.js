@@ -17,7 +17,7 @@ import ProductPolicy from './Page/ProductPolicy'
 // img
 import ic_6 from '../img/6.jpg'
 import ic_4 from '../img/4.png'
-import bg from '../img/bg.jpg'
+// import bg from '../img/bg.jpg'
 import ic_22 from '../img/22.jpg'
 import ic_33 from '../img/33.png'
 import ic_a from '../img/a.jpg'
@@ -26,11 +26,24 @@ const video1 = 'video/success.mp4'
 const Bound = styled.div`
     display:flex;
     flex-direction:column;
-    /* height:100%; */
-    /* min-width: 1024px; */
     margin: 0 auto;
-    .header{
-        // background-image:url(${bg});
+    @media (max-width:960px){
+        box-sizing: border-box;
+        padding: 0 5px;
+        overflow-y: auto;
+        h1{
+        font-size: 20px;
+        text-align: center;
+        }
+    }
+    .header, .block{
+        ul{
+            @media (max-width:960px){
+                margin: 0;
+                /* list-style-type: none; */
+                padding-left: 20px;
+            }
+        }
     }
     span {
         color:rgb(255, 120, 0);
@@ -47,6 +60,9 @@ const Bound = styled.div`
         justify-content: center;
         text-align: center;
         text-align: justify;
+        @media (max-width:960px){
+          font-size: 18px;
+        }
     }
     .line{
         border: 1px solid #dbd9d9;
@@ -60,7 +76,17 @@ const Bound = styled.div`
         border: none;
         padding: 0 10px;
         text-align: center;
-    border-radius: 20px;
+        border-radius: 20px;
+        @media (max-width:960px){
+            padding: 10px;
+          p{
+              font-size:18px;
+          }
+          h4, h5{
+              margin: 5px 0;
+          }
+          
+        }
     }
     .main-title{
         font-size: 24px;
@@ -69,6 +95,11 @@ const Bound = styled.div`
         text-transform: uppercase;
         line-height: 30px;
         text-align: justify;
+        @media (max-width:960px){
+            font-size: 22px;
+            line-height: 25px;
+            letter-spacing: 1px;
+        }
     }
 `
 class AdvertiseScreen extends Component {

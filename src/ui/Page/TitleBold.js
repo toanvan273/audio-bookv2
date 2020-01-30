@@ -8,6 +8,9 @@ const Bound = styled.div`
         flex-direction: column;
         b{
             font-size: 20px;
+            @media (max-width:960px){
+            font-size: 18px;
+            }
         }
         h3{
             margin-top: 5px;

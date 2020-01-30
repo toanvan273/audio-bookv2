@@ -10,10 +10,16 @@ const Bound = styled.div`
     display: grid;
     grid-template-columns: 60% 39%;
     grid-gap: 1%;
+    @media (max-width:960px){
+        display:flex;
+    }
     .left-content{
 
     }
     .right-content{
+        @media (max-width:960px){
+            display:none;
+        }
        img{
            width: 100%;
        } 

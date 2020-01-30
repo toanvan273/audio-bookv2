@@ -214,14 +214,15 @@ class FormRegister extends Component {
             add: e.target.value
         })
     }
-    onFormSubmit = e => {
+    onFormSubmit = async e => {
         e.preventDefault()
         const { name, phone, add } = this.state
         const data = { name, phone, address: add, email: null }
-        this.props.addUser(data)
-        this.setState({
-            isSubmit:true
-        })
+       await this.props.addUser(data)
+       await this.props.getSubmit(true)
+        // this.setState({
+        //     isSubmit:true
+        // })
     }
     render() {
         const { isSubmit } = this.state

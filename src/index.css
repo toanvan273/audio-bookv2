@@ -17,7 +17,27 @@ body {
   display: -webkit-flex;
   display: -moz-flex;
 }
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){
+@supports (overflow:-webkit-marquee) and (justify-content:inherit){
+  #root{
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0){
+  #root{
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+  }
+}
+@supports (-webkit-text-size-adjust:none) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)) {
   #root{
     max-width: 1024px;
     margin: 0 auto;
@@ -31,9 +51,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
- html{
+ /* html{
    height: 100%;
- }
+ } */
 p{
   margin: 0;
 }

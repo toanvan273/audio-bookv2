@@ -29,7 +29,7 @@ const Bound = styled.div`
     display: -moz-flex;
     flex-direction:column;
     margin: 0 auto;
-    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
+    @supports (-webkit-text-size-adjust:none) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)){ 
         display:flex;
         display: -webkit-flex;
         display: -moz-flex;
@@ -44,7 +44,82 @@ const Bound = styled.div`
             text-align: center;
             }
         }
+        .header, .block{
+            ul{
+                @media (max-width:960px){
+                    margin: 0;
+                    padding-left: 20px;
+                }
+            }
+        }
+        span {
+            color:rgb(255, 120, 0);
+        }
+        p{
+            font-size: 20px;
+            font-weight: 900;
+            text-align: justify;
+            font-family: serif;
+        }
+        h3{
+            display: flex;
+            display: -webkit-flex;
+            display: -moz-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-align: justify;
+            @media (max-width:960px){
+            font-size: 18px;
+            }
+        }
+        .line{
+            border: 1px solid #dbd9d9;
+            margin: 10px 0;
+        }
+        .footer{
+            display: flex;
+            display: -webkit-flex;
+            display: -moz-flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f2f2f2;
+            border: none;
+            padding: 0 10px;
+            text-align: center;
+            border-radius: 20px;
+            @media (max-width:960px){
+                padding: 10px;
+            p{
+                font-size:18px;
+            }
+            h4, h5{
+                margin: 5px 0;
+            }
+            
+            }
+        }
+        .main-title{
+            font-size: 24px;
+            font-weight: 900;
+            font-family: inherit;
+            text-transform: uppercase;
+            line-height: 30px;
+            text-align: justify;
+            @media (max-width:960px){
+                font-size: 22px;
+                line-height: 25px;
+                letter-spacing: 1px;
+            }
+        }
+        &.thank{
+            align-items: center;
+            p,h3{
+                text-align:center;
+            }
+        }
     }
+    /* // */
     @media (max-width:960px){
         box-sizing: border-box;
         padding: 0 5px;

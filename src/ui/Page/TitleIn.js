@@ -2,6 +2,25 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const Bound = styled.div`
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    b{
+        font-size: 20px;
+        font-style: italic;
+        @media (max-width:960px){
+        font-size: 18px;
+        }
+    }
+    h3{
+        margin-top: 5px;
+        font-style: italic;
+    }
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
         display: flex;
         display: -webkit-flex;
         display: -moz-flex;
@@ -20,6 +39,7 @@ const Bound = styled.div`
             margin-top: 5px;
             font-style: italic;
         }
+    }
 `
 class App extends Component {
 

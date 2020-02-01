@@ -17,6 +17,16 @@ body {
   display: -webkit-flex;
   display: -moz-flex;
 }
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){
+  #root{
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

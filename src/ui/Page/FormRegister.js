@@ -13,6 +13,161 @@ const Bound = styled.div`
     display: -moz-flex;
     background: url(${bgform});
     margin: 20px 0;
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
+        display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
+        background: url(${bgform});
+        margin: 20px 0;
+        .form-content{
+            display: flex;
+            display: -webkit-flex;
+            display: -moz-flex;
+            padding: 20px;
+            box-sizing: border-box;
+            @media (max-width:960px){
+                padding: 10px;
+            }
+            .main-form{
+                display: flex;
+                display: -webkit-flex;
+                display: -moz-flex;
+                flex:1;
+                background: #fff;
+                border-radius: 20px;
+                overflow: hidden;
+                padding: 20px 0;
+                flex-direction: column;
+                @media (max-width:960px){
+                    padding: 10px 0;
+                }
+                .header{
+                    display: flex;
+                    display: -webkit-flex;
+                    display: -moz-flex;
+                    align-items: center;
+                    padding: 0 20px;
+                    @media (max-width:960px){
+                        display: none;
+                    }
+                    img{
+                        animation: tada 1s infinite; 
+                    }
+                    .title{
+                        font-size: 26px;
+                        font-weight: 300;
+                        color: #2c746d;
+                        line-height: 30px;
+                        margin-left: 10px;
+                    }
+                }
+                .sale-off{
+                    text-align: center;
+                    padding: 10px 0;
+                    background: #fecb27;
+                    font-size: 26px;
+                    color: #000;
+                    @media (max-width:960px){
+                        margin: 0px;
+                    }
+                }
+                .form{
+                    padding: 0 20px;
+                    @media (max-width:960px){
+                        padding: 0 10px;
+                    }
+                    .price{
+                        font-size: 3.2rem;
+                        text-align: center;
+                        @media (max-width:960px){
+                            font-size: 34px;
+                        }
+                    }
+                    .old{
+                        text-decoration: line-through;
+                        color: rgba(0,0,0,.3);
+                        font-weight: 300;
+                    }
+                    .new{
+                        color: #ff7371;
+                        font-weight: 700;
+                    }
+                    p{
+                        color: #6d6d6d;
+                        font-weight: 300;
+                        text-align: center;
+                    }
+                    .icon-book{
+                        padding-bottom: 5px;
+                        border-bottom: 1px solid #ccc;
+                        margin-bottom: 10px;
+                    
+                    }
+                    .tranfer{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        span{
+                            color: #6d6d6d;
+                            font-weight: 600
+                        }
+                    }
+                    h4{
+                        color: #6d6d6d;
+                        font-weight: 300;
+                        font-size: 20px;
+                        font-family: serif;
+                        text-align: center;
+                        @media (max-width:960px){
+                            margin: 15px 0;
+                        }
+                        span{
+                            font-weight: 600;
+                            color: #836d6d;
+                        }
+                    }
+                    form{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        input{
+                            width: 100%;
+                            border-radius: 25px;
+                            box-sizing: border-box;
+                            padding-left: 20px;
+                            border: 1px solid gray;
+                            height: 45px;
+                            margin-bottom: 10px;
+                            font-size: 18px;
+                            outline: none;
+                        }
+                        button{
+                            color: #000;
+                            background-color: #fecb27;
+                            border: none;
+                            border-radius: 20px;
+                            height: 40px;
+                            width: 80%;
+                            cursor: pointer;
+                            font-weight: 700;
+                        }
+                        @media (max-width:960px){
+                            h4{
+                                display:none;
+                            }
+                        }
+                    }
+                    .submited{
+                        h2{
+                            color: #6d6d6d;
+                            font-weight: 600;
+                            text-align: center;
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
     @keyframes mymove {
         0% {transform: scaleX(1);}
         50% {transform: scale3d(1.05,1.05,1.05);}

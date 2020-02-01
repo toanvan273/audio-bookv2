@@ -29,6 +29,22 @@ const Bound = styled.div`
     display: -moz-flex;
     flex-direction:column;
     margin: 0 auto;
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
+        display:flex;
+        display: -webkit-flex;
+        display: -moz-flex;
+        flex-direction:column;
+        margin: 0 auto;
+        @media (max-width:960px){
+            box-sizing: border-box;
+            padding: 0 5px;
+            overflow-y: auto;
+            h1{
+            font-size: 20px;
+            text-align: center;
+            }
+        }
+    }
     @media (max-width:960px){
         box-sizing: border-box;
         padding: 0 5px;
@@ -42,7 +58,6 @@ const Bound = styled.div`
         ul{
             @media (max-width:960px){
                 margin: 0;
-                /* list-style-type: none; */
                 padding-left: 20px;
             }
         }

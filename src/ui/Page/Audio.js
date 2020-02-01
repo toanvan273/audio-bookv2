@@ -8,6 +8,14 @@ const Bound = styled.div`
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
+            display: flex;
+            display: -webkit-flex;
+            display: -moz-flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
         audio{
             width: 100%;
         }

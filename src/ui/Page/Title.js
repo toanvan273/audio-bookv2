@@ -2,6 +2,22 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const Bound = styled.div`
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media only screen and (max-width: 600px) {
+        margin-top: 10px;
+        border-top: 1px solid #dbd9d9;
+        padding-top: 8px;
+        h4{
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+    }
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
         display: flex;
         display: -webkit-flex;
         display: -moz-flex;
@@ -17,6 +33,7 @@ const Bound = styled.div`
                 margin-bottom: 10px;
             }
         }
+    }
 `
 class App extends Component {
 

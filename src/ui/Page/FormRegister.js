@@ -9,6 +9,8 @@ import { connect } from 'react-redux'
 import { addUserAction } from '../../action/userAction'
 const Bound = styled.div`
     display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
     background: url(${bgform});
     margin: 20px 0;
     @keyframes mymove {
@@ -36,10 +38,14 @@ const Bound = styled.div`
         grid-gap: 20px;
         @media (max-width:960px){
             display: flex;
+            display: -webkit-flex;
+            display: -moz-flex;
         }
     }
     .image-content{
         display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
         align-items: center;
         justify-content: center;
         @media (max-width:960px){
@@ -52,6 +58,8 @@ const Bound = styled.div`
     }
     .form-content{
         display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
         padding: 20px;
         box-sizing: border-box;
         @media (max-width:960px){
@@ -59,6 +67,8 @@ const Bound = styled.div`
         }
         .main-form{
             display: flex;
+            display: -webkit-flex;
+            display: -moz-flex;
             flex:1;
             background: #fff;
             border-radius: 20px;
@@ -70,6 +80,8 @@ const Bound = styled.div`
             }
             .header{
                 display: flex;
+                display: -webkit-flex;
+                display: -moz-flex;
                 align-items: center;
                 padding: 0 20px;
                 @media (max-width:960px){

@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 const Bound = styled.div`
     display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
     justify-content: center;
     align-items: center;
     font-size: 22px;
@@ -15,6 +17,8 @@ const Bound = styled.div`
     }
     .div{
         display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
         flex-direction: column;
         align-items: center;
         p{

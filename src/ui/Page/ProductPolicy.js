@@ -12,6 +12,8 @@ const Bound = styled.div`
     grid-gap: 1%;
     @media (max-width:960px){
         display:flex;
+        display: -webkit-flex;
+        display: -moz-flex;
     }
     .left-content{
 

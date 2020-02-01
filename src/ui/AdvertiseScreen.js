@@ -25,6 +25,8 @@ import ic_77 from '../img/77.jpg'
 const video1 = 'video/success.mp4'
 const Bound = styled.div`
     display:flex;
+    display: -webkit-flex;
+    display: -moz-flex;
     flex-direction:column;
     margin: 0 auto;
     @media (max-width:960px){
@@ -52,10 +54,12 @@ const Bound = styled.div`
         font-size: 20px;
         font-weight: 900;
         text-align: justify;
-    font-family: serif;
+        font-family: serif;
     }
     h3{
         display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -70,6 +74,8 @@ const Bound = styled.div`
     }
     .footer{
         display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
         flex-direction: column;
         align-items: center;
         background: #f2f2f2;

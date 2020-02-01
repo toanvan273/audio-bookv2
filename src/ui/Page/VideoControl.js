@@ -4,6 +4,9 @@ import thumnal from '../../img/coverimg.jpg'
 import ic_play from '../../img/555.png'
 const Bound = styled.div`
         display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
+
         justify-content: center;
         align-items: center;
         margin-top: 20px;
@@ -11,6 +14,8 @@ const Bound = styled.div`
         .main-video{
             position: relative;
             display: flex;
+            display: -webkit-flex;
+            display: -moz-flex;
             justify-content: center;
             align-items: center;
             video{

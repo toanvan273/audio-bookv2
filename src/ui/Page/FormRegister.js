@@ -394,7 +394,7 @@ class FormRegister extends Component {
     render() {
         const { isSubmit } = this.state
         return (
-            <Bound >
+            <Bound id="content-form">
                 <div className='grid-container'>
                     <div className='image-content'>
                         <img src={usb} alt='usb' />
@@ -437,7 +437,7 @@ class FormRegister extends Component {
                                 {!isSubmit ?
                                     <React.Fragment>
                                         <h4>Chỉ cần để lại thông tin, sẽ có nhân viên tư vấn gọi điện lại cho bạn để xác nhận đơn hàng(trong giờ hành chính)</h4>
-                                        <form onSubmit={this.onFormSubmit}>
+                                        <form onSubmit={this.onFormSubmit} >
                                             <input
                                                 onChange={this.getName}
                                                 type="text" placeholder='Họ và tên' />

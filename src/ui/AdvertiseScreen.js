@@ -214,7 +214,7 @@ class AdvertiseScreen extends Component {
         })
     }
     toBottom = () => {
-        var elmnt = document.getElementById("content");
+        var elmnt = document.getElementById("content-form");
         elmnt.scrollIntoView();
     }
     render() {
@@ -431,7 +431,7 @@ class AdvertiseScreen extends Component {
                                 title={'CHÍNH SÁCH SẢN PHẨM'}
                             />
                             <ProductPolicy />
-                            <div className='footer' id="content">
+                            <div className='footer' >
                                 <p>Hotline: 033 213 8583</p>
                                 <p>Đ/c: Số 71, Đa Sỹ, Kiến Hưng, Hà Đông, Hà Nội</p>
                                 <h4>HÃY MUA NGAY BỘ SÁCH SỐ 1 THẾ GIỚI VÀ LẮNG NGHE CÁC CÂU CHUYỆN THÀNH CÔNG HÀNG NGÀY.</h4>

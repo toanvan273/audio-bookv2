@@ -49,7 +49,7 @@ const Bound = styled.div`
             }
         }
 `
-class App extends Component {
+class Iwant extends Component {
 
     render() {
         return (
@@ -64,4 +64,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Iwant;

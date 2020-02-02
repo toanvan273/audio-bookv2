@@ -29,6 +29,9 @@ const Bound = styled.div`
             font-size: 36px;
             @media (max-width:960px){
                 font-size: 30px;
+                text-align:center;
+                padding: 5px;
+                margin: 10px 0;
             }
         }
     }

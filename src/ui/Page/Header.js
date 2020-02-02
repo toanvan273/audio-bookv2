@@ -1,0 +1,133 @@
+import React, { Component } from 'react';
+import styled from 'styled-components'
+import img from '../../img/vuong.png'
+const cTitle = '#1fc6bf'
+const Bound = styled.div`
+    display: grid;
+    grid-template-columns: 50% 50%;
+    @media (max-width:960px){
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-main{
+        display: flex;
+        justify-content: space-around;
+        color: #2c746d;
+        border-bottom: 1px solid lightgrey;
+        padding-bottom: 5px;
+        u{
+            font-weight:bold;
+        }
+        b,u{
+            border-radius: 15px;
+            height: 20px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &:hover{
+                background: #00dcfe;
+            }
+        }
+    
+    }
+    .main-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        /* padding: 90px 0; */
+        box-sizing: border-box;
+        @media (max-width:960px){
+            padding: 10px 0;
+        }
+       
+        .title{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* height: 100px; */
+            justify-content: space-around;
+            h1,p{
+                margin:0;
+            }
+            h1{
+                font-size: 75px;
+                color:#ffa500;
+                line-height: 1;
+            }
+            p{
+                color: ${cTitle};
+                font-size: 24px;
+            }
+        }
+        .content{
+            text-align: center;
+            margin: 30px 0px;
+            color: darkgrey;
+        }
+        .button-control{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .get-more{
+                width: 150px;
+                height: 30px;
+                border: none;
+                border-radius: 20px;
+                background: #1296a3;
+                color: #fff;
+                cursor: pointer;
+            }
+            .buy{
+                width: 80px;
+                height: 30px;
+                border-radius: 20px;
+                border: none;
+                background: orange;
+                /* color: #fff; */
+                cursor: pointer;
+            }
+        }
+    }
+    .img-class{
+        img{
+            width:100%;
+        }
+    }
+`
+class Header extends Component {
+
+    render() {
+        return (
+            <Bound >
+                <div className='main-content'>
+                    <div className='menu-main'>
+                        <b>Nội dung sách</b>
+                        <b>Nghe thử</b>
+                        <u>Đặt mua</u>
+                    </div>
+                    <div className='title'>
+                        <h1>80</h1>
+                        <p>SÁCH NÓI</p>
+                        <p>HAY NHẤT MỌI THỜI ĐẠI</p>
+                    </div>
+                    <div className='content'>
+                        <p>Chiếc USB này chứa những quyển sách vĩ đại về kinh doanh được tạp chí New York bình chọn
+                            giúp đạt được giấc mơ làm giàu của bất kỳ ai may mắn sở hữu nó!
+                        </p>
+                    </div>
+                    <div className='button-control'>
+                        <button className='get-more'>Tìm hiểu thêm</button>
+                        <button className='buy'>Đặt mua</button>
+                    </div>
+                </div>
+                <div className='img-class'>
+                    <img src={img} alt='img' />
+                </div>
+            </Bound>
+        );
+    }
+}
+
+export default Header;

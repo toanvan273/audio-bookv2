@@ -16,6 +16,7 @@ import FormRegister from './Page/FormRegister'
 import ProductPolicy from './Page/ProductPolicy'
 import Header from './Page/Header'
 import BlockHeadMan from './Page/BlockHeadMan'
+import BlockHeadManV2 from './Page/BlockHeadManV2'
 // img
 import tieude from '../img/tieude.png'
 import ic_6 from '../img/6.jpg'
@@ -250,6 +251,7 @@ class AdvertiseScreen extends Component {
                         <div className='header'>
                             <Header />
                             <BlockHeadMan />
+                            <BlockHeadManV2 />
                         </div>
                         <div className='line'></div>
                         <div className='title-video'>

@@ -50,7 +50,6 @@ class BlockHeadMan extends Component {
                             }}
                         />
                     </div>
-
                     <div className='block'>
                         <HeadMan
                             title={'TÀI CHÍNH'}

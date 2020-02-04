@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 // import bg from '../../img/pen.png'
 import bg from '../../img/phone5.png'
-import ManBlock from '../control/ManBlock'
-import ManRevest from '../control/ManRevest'
-import flat1 from '../../img/icon/flatred.png'
-import flat2 from '../../img/icon/nonchuoiflat.png'
-import flat3 from '../../img/icon/yellowflat.png'
-import flat4 from '../../img/icon/ograneflat.png'
-import flat5 from '../../img/icon/flatblue.png'
+// import ManBlock from '../control/ManBlock'
+// import ManRevest from '../control/ManRevest'
+// import flat1 from '../../img/icon/flatred.png'
+// import flat2 from '../../img/icon/nonchuoiflat.png'
+// import flat3 from '../../img/icon/yellowflat.png'
+// import flat4 from '../../img/icon/ograneflat.png'
+// import flat5 from '../../img/icon/flatblue.png'
 const Bound = styled.div`
     position: relative;
     height: fit-content;

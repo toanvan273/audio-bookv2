@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-import bg from '../../img/pen.png'
+// import bg from '../../img/pen.png'
+import bg from '../../img/phone5.png'
 import ManBlock from '../control/ManBlock'
 import ManRevest from '../control/ManRevest'
 import flat1 from '../../img/icon/flatred.png'
@@ -40,7 +41,7 @@ class BlockHeadManV2 extends Component {
         return (
             <Bound id='flat-bound'>
                 <img src={bg} alt='alt' />
-                <div className='fit-content'>
+                {/* <div className='fit-content'>
                     <div></div>
                     <div></div>
                     <div></div>
@@ -80,7 +81,7 @@ class BlockHeadManV2 extends Component {
                     </div>
                     <div></div>
                     <div></div>
-                </div>
+                </div> */}
             </Bound>
         );
     }

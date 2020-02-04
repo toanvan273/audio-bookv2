@@ -10,15 +10,21 @@ const Bound = styled.div`
     flex-direction: column;
     margin-top: 20px;
     b{
-        font-size: 20px;
+        color: #205651;
+        font-weight: 700;
+        font-size: 30px;
         font-style: italic;
         @media (max-width:960px){
-        font-size: 18px;
+            font-size: 26px;
         }
     }
     h3{
         margin-top: 5px;
-        font-style: italic;
+        /* font-style: italic; */
+        font-size: 18px;
+        color: #46a99f;
+        font-weight: 300;
+        text-align: center;
     }
     @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
         display: flex;

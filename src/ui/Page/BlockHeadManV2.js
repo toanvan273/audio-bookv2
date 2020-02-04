@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 // import bg from '../../img/pen.png'
-import bg from '../../img/phone5.png'
+// import bg from '../../img/phone5.png'
+import mobile from '../../img/coreformoblie.png'
+import laptop from '../../img/coreforlaptop.png'
 // import ManBlock from '../control/ManBlock'
 // import ManRevest from '../control/ManRevest'
 // import flat1 from '../../img/icon/flatred.png'
@@ -36,8 +38,28 @@ const Bound = styled.div`
     }
 `
 class BlockHeadManV2 extends Component {
-
+    state={
+        bg:''
+    }
+    componentDidMount(){
+        this.getResize()
+        window.addEventListener('resize',this.getResize)
+    }
+    getResize=()=>{
+        let width = window.innerWidth
+        console.log('width',width);
+        if(width>960){
+            this.setState({
+                bg: laptop
+            })
+        }else{
+            this.setState({
+                bg:mobile
+            })
+        }
+    }
     render() {
+        const {bg} = this.state
         return (
             <Bound id='flat-bound'>
                 <img src={bg} alt='alt' />

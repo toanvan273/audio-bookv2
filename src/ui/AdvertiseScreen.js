@@ -15,17 +15,26 @@ import VideoControl from './Page/VideoControl'
 import FormRegister from './Page/FormRegister'
 import ProductPolicy from './Page/ProductPolicy'
 import Header from './Page/Header'
-import BlockHeadMan from './Page/BlockHeadMan'
+// import BlockHeadMan from './Page/BlockHeadMan'
 import BlockHeadManV2 from './Page/BlockHeadManV2'
 // img
 // import tieude from '../img/tieude.png'
 import ic_6 from '../img/6.jpg'
 import ic_4 from '../img/4.png'
-// import bg from '../img/bg.jpg'
+
 import ic_22 from '../img/22.jpg'
 import ic_33 from '../img/33.png'
 import ic_a from '../img/a.jpg'
 import ic_77 from '../img/77.jpg'
+import kinhdoanh from '../img/book/18kinhdoanh.jpg'
+import marketing from '../img/book/8marketing.jpg'
+import taichinh from '../img/book/19taichinh.jpg'
+import quantri from '../img/book/14quantri.jpg'
+import loikhuyen from '../img/book/16loikhuyen.jpg'
+import camhung from '../img/book/7camhung.jpg'
+import tien from '../img/book/tien.jpg'
+import nam from '../img/book/cuong.jpg'
+
 const video1 = 'video/success.mp4'
 const Bound = styled.div`
     display:flex;
@@ -55,8 +64,10 @@ const Bound = styled.div`
                     padding-left: 20px;
                 }
                 li div{
-                    font-size: 18px;
+                    font-size: 15px;
                 }
+                li:nth-child(even) {background: #f2f2f2}
+                li:nth-child(odd) {background: #FFF}
             }
         }
     
@@ -155,7 +166,7 @@ const Bound = styled.div`
             }
         }
         li div{
-            font-size: 18px;
+            font-size: 15px;
         }
     }
  
@@ -272,6 +283,7 @@ class AdvertiseScreen extends Component {
                         <div className='header'>
                             <Header getKey={this.getKeyScroll} />
                             {/* <BlockHeadMan /> */}
+                            <h3 className='what-in'>5 GIÁ TRỊ TỪ BỘ SÁCH NÀY</h3>
                             <BlockHeadManV2 />
                         </div>
                         <div className='line'></div>
@@ -284,6 +296,7 @@ class AdvertiseScreen extends Component {
                         <h3 className='what-in'>CÓ GÌ TRONG USB SÁCH NÓI NÀY ?</h3>
                         <Title number={18}
                             title={"CUỐN SÁCH VỀ TƯ DUY KINH DOANH "}
+                            book={kinhdoanh}
                         />
                         <div className='line'></div>
                         <div className='block'>
@@ -298,6 +311,7 @@ class AdvertiseScreen extends Component {
                         <Iwant toBottom={this.toBottom} />
                         <Title number={19}
                             title={"SÁCH NÓI VỀ CHỦ ĐỀ TÀI CHÍNH"}
+                            book={taichinh}
                         />
                         <div className='line'></div>
                         <div className='block'>
@@ -312,6 +326,7 @@ class AdvertiseScreen extends Component {
                         <ImageSigle imgLink={ic_4} />
                         <Title number={8}
                             title={"SÁCH NÓI VỀ MARKETING & SALES"}
+                            book={marketing}
                         />
                         <div className='line'></div>
                         <CountDown time={5400} />
@@ -326,6 +341,7 @@ class AdvertiseScreen extends Component {
                         </div>
                         <Title number={13}
                             title={"SÁCH NÓI VỀ QUẢN TRỊ HAY NHẤT"}
+                            book={quantri}
                         />
                         <div className='line'></div>
                         <div className='block'>
@@ -340,6 +356,7 @@ class AdvertiseScreen extends Component {
                         <ImageSigle imgLink={ic_6} />
                         <Title number={16}
                             title={"SÁCH LỜI KHUYÊN KINH DOANH​"}
+                            book={loikhuyen}
                         />
                         <div className='line'></div>
                         <div className='block'>
@@ -353,6 +370,7 @@ class AdvertiseScreen extends Component {
                         </div>
                         <Title number={7}
                             title={"CÂU CHUYỆN KINH DOANH CẢM HỨNG​"}
+                            book={camhung}
                         />
                         <div className='line'></div>
                         <div className='block'>
@@ -382,8 +400,15 @@ class AdvertiseScreen extends Component {
                             sub={'Ý kiến khách hàng đã mua và nghe USB sách nói của chúng tôi'}
                         />
                         <CustomerThink
+                            image={nam}
                             people={'Anh Đặng Văn Nam'}
                             content={'Tôi rất thích đọc sách, mỗi ngày nhưng công việc quá nhiều tôi chưa thể sắp xếp được thời gian đọc sách của mình. Thời gian rảnh của tôi là lúc tập thể dục vào buổi sáng sớm, bởi tôi quan niệm nếu không có sức khỏe thì chẳng làm được gì. Cuối cùng tôi cũng tìm ra giải pháp để có thể đọc sách mỗi ngày, Thậm chí tôi còn tăng nhiều lần khả năng đọc sách của mình, dó chính là thay bằng đọc tôi chuyển sang nghe Audio book lúc tập thể dục nó đúng là giải pháp tuyệt vời đối với tôi'}
+                        />
+
+                        <CustomerThink
+                            image={tien}
+                            people={'Chị Thủy Tiên'}
+                            content={'Trước đây mỗi lần ra quyết định trong công việc kinh doanh của mình, tôi đều rất trần trừ, phải so đo tính toán rất nhiều lần rồi mới ra quyết định. Từ khi nghe audio book tôi đã tích lũy được rất nhiều kinh nghiệm và áp dụng được nhiều trong công việc kinh doanh. Đặc biệt sự quyết đoán trong công việc của tôi đã được cải thiện rõ rệt.'}
                         />
                         <ImageSigle imgLink={ic_33} />
                         <TitleBold
@@ -420,14 +445,7 @@ class AdvertiseScreen extends Component {
                             content={'Chỉ với số tiền rất nhỏ mà có thể được sở hữu gần 100 cuốn sách best sellers của mọi thời đại (tổng trị giá trên Amazon là gần 1000 USD) (và có thêm 1 chiếc USB vô cùng hữu dụng để phục vụ cho công việc), một sự đầu tư quá xứng đáng'}
                         />
                         <ImageSigle imgLink={ic_77} />
-                        <TitleIn
-                            title={'Cảm nhận khách hàng'}
-                            sub={'Ý kiến khách hàng đã mua và nghe USB sách nói của chúng tôi'}
-                        />
-                        <CustomerThink
-                            people={'Chị Nguyễn Thị Thanh Hà'}
-                            content={'Trước đây mỗi lần ra quyết định trong công việc kinh doanh của mình, tôi đều rất trần trừ, phải so đo tính toán rất nhiều lần rồi mới ra quyết định. Từ khi nghe audio book tôi đã tích lũy được rất nhiều kinh nghiệm và áp dụng được nhiều trong công việc kinh doanh. Đặc biệt sự quyết đoán trong công việc của tôi đã được cải thiện rõ rệt.'}
-                        />
+
                         <FormRegister getSubmit={this.getSubmit} />
                         <Benifit
                             title={'CHÍNH SÁCH SẢN PHẨM'}

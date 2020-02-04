@@ -11,6 +11,9 @@ const Bound = styled.div`
     font-weight: bold;
     margin-bottom:8px;
     color: #005993;
+    b{
+            color: #0a4f54;
+        }
     @media only screen and (max-width: 600px) {
       font-size: 18px;
       margin-bottom:5px;
@@ -21,12 +24,22 @@ const Bound = styled.div`
         display: -moz-flex;
         flex-direction: column;
         align-items: center;
+      
         p{
-            background: pink;
+            color: #fff;
             padding: 10px;
-            border-radius: 5px;
             text-transform: uppercase;
             font-size: 36px;
+            border-bottom: 4px solid rgb(197, 144, 0);
+            border-radius: 10px;
+            text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px;
+            border-top-color: rgb(255, 241, 219);
+            border-right-color: rgb(255, 241, 219);
+            border-left-color: rgb(255, 241, 219);
+            padding: 12px 15px;
+            font-weight: bold !important;
+            background-image: none !important;
+            background-color: rgb(238, 168, 0) !important;
             @media (max-width:960px){
                 font-size: 30px;
                 text-align:center;

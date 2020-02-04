@@ -29,6 +29,7 @@ const Bound = styled.div`
                 margin-top: 10px;
                 font-weight: 600;
                 text-align: center;
+                margin-bottom: 0;
             }
         }
 `

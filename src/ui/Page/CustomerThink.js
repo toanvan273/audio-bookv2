@@ -2,38 +2,30 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const Bound = styled.div`
-        display: flex;
-        display: -webkit-flex;
-        display: -moz-flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 20px;
-        p{
-            font-size: 20px;
-            text-align: justify;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    .tic{
+        font-size: 20px;
+        text-align: justify;
+    }
+    h3{
+        margin-top: 5px;
+    }
+    @media (max-width:960px){
+        .tic{
+        font-size: 14px;
+        text-align: justify
         }
         h3{
-            margin-top: 5px;
-           
+            margin-top: 0px;
+            font-weight: 600;
         }
-        @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
-            display: flex;
-            display: -webkit-flex;
-            display: -moz-flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin-top: 20px;
-            p{
-                font-size: 20px;
-                text-align: justify;
-            }
-            h3{
-                margin-top: 5px;
-            
-            }
-        }
+    }
 
 `
 class App extends Component {
@@ -43,7 +35,7 @@ class App extends Component {
         return (
             <Bound>
                 <h3>{people}</h3>
-                <p>{content}</p>
+                <p className='tic'>{content}</p>
             </Bound>
         );
     }

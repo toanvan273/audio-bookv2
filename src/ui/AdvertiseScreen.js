@@ -18,7 +18,7 @@ import Header from './Page/Header'
 import BlockHeadMan from './Page/BlockHeadMan'
 import BlockHeadManV2 from './Page/BlockHeadManV2'
 // img
-import tieude from '../img/tieude.png'
+// import tieude from '../img/tieude.png'
 import ic_6 from '../img/6.jpg'
 import ic_4 from '../img/4.png'
 // import bg from '../img/bg.jpg'
@@ -59,9 +59,8 @@ const Bound = styled.div`
                 }
             }
         }
-     
     
-        h3{
+        /* h3{
             display: flex;
             display: -webkit-flex;
             display: -moz-flex;
@@ -72,7 +71,7 @@ const Bound = styled.div`
             @media (max-width:960px){
             font-size: 18px;
             }
-        }
+        } */
         .line{
             border: 1px solid #dbd9d9;
             margin: 10px 0;
@@ -234,6 +233,28 @@ class AdvertiseScreen extends Component {
         var elmnt = document.getElementById("content-form");
         elmnt.scrollIntoView();
     }
+    getKeyScroll = key => {
+        const mainContent = document.getElementById('flat-bound')
+        const audioBound = document.getElementById('main-audio')
+        const toBuy = document.getElementById("content-form");
+        let videoBound = document.getElementById('main-video')
+        switch (key) {
+            case 0:
+                mainContent.scrollIntoView();
+                break;
+            case 1:
+                audioBound.scrollIntoView();
+                break;
+            case 2:
+                toBuy.scrollIntoView();
+                break;
+            case 3:
+                videoBound.scrollIntoView();
+                break;
+            default:
+                break;
+        }
+    }
     render() {
         const { isSubmit } = this.state
         return (
@@ -249,8 +270,8 @@ class AdvertiseScreen extends Component {
                     :
                     <Bound>
                         <div className='header'>
-                            <Header />
-                            <BlockHeadMan />
+                            <Header getKey={this.getKeyScroll} />
+                            {/* <BlockHeadMan /> */}
                             <BlockHeadManV2 />
                         </div>
                         <div className='line'></div>
@@ -347,6 +368,7 @@ class AdvertiseScreen extends Component {
                             title={'Hãy gọi: 033 213 8583 để mua USB ngay!!!'}
                             sub={"NGHE THỬ SÁCH NÓI "} />
                         <ImageSigle imgLink={ic_22} />
+                        <div id='main-audio'></div>
                         <Audio
                             title={"CHA GIÀU - CHA NGHÈO"}
                             link={'https://168trends.com/wp-content/uploads/2019/09/USB-Sách-Nói-Tủ-sách-Kinh-doanh-làm-giàu-hay-nhất-mọi-thời-đại-Usb-sách-nói.mp3'}
@@ -431,15 +453,15 @@ class AdvertiseScreen extends Component {
 }
 
 export default AdvertiseScreen;
-    {/* <h1 className='main-title'>
+{/* <h1 className='main-title'>
             Chiếc USB này chứa những quyển sách vĩ đại về kinh doanh giúp đạt được giấc mơ làm giàu của bất kì ai may mắn sở hữu nó
         <span> 80 audiobooks kinh điển nhất do tạp chí New York Times bình chọn. </span>
         </h1> */}
-    {/* <div className='main-title'>
+{/* <div className='main-title'>
         <img src={tieude} alt='tieude' />
     </div> */}
 
-    {/* <ul>
+{/* <ul>
             <li>
                 <div>
                     <span>18 cuốn sách </span>

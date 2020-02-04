@@ -97,15 +97,18 @@ const Bound = styled.div`
     }
 `
 class Header extends Component {
-
+    onConfirm=key=>{
+        // console.log('key: ',key);
+        this.props.getKey(key)
+    }
     render() {
         return (
             <Bound >
                 <div className='main-content'>
                     <div className='menu-main'>
-                        <b>Nội dung sách</b>
-                        <b>Nghe thử</b>
-                        <u>Đặt mua</u>
+                        <b onClick={()=>this.onConfirm(0)}>Nội dung sách</b>
+                        <b onClick={()=>this.onConfirm(1)}>Nghe thử</b>
+                        <u onClick={()=>this.onConfirm(2)}>Đặt mua</u>
                     </div>
                     <div className='title'>
                         <h1>80</h1>
@@ -118,8 +121,8 @@ class Header extends Component {
                         </p>
                     </div>
                     <div className='button-control'>
-                        <button className='get-more'>Tìm hiểu thêm</button>
-                        <button className='buy'>Đặt mua</button>
+                        <button className='get-more' onClick={()=>this.onConfirm(3)}>Tìm hiểu thêm</button>
+                        <button className='buy' onClick={()=>this.onConfirm(2)}>Đặt mua</button>
                     </div>
                 </div>
                 <div className='img-class'>

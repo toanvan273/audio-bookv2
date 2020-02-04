@@ -38,7 +38,7 @@ class BlockHeadManV2 extends Component {
 
     render() {
         return (
-            <Bound>
+            <Bound id='flat-bound'>
                 <img src={bg} alt='alt' />
                 <div className='fit-content'>
                     <div></div>

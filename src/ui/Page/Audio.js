@@ -8,16 +8,28 @@ const Bound = styled.div`
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
+        /* @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
             display: flex;
             display: -webkit-flex;
             display: -moz-flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-        }
+        } */
         audio{
             width: 100%;
+        }
+        @media (max-width:960px){
+            .tic{
+            font-size: 14px;
+            text-align: justify
+            }
+            h3{
+                font-size: 18px;
+                margin-top: 10px;
+                font-weight: 600;
+                text-align: center;
+            }
         }
 `
 class App extends Component {

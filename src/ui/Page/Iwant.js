@@ -8,8 +8,7 @@ const Bound = styled.div`
         justify-content: center;
         align-items: center;
        .trick{
-            width: 90%;
-            border-radius: 10px;
+            padding: 10px 30px;
             cursor: pointer;
             margin-top: 20px;
             display: flex;
@@ -20,28 +19,26 @@ const Bound = styled.div`
             justify-content: center;
             background: #fecb27;
             text-transform: uppercase;
-            color: #fff;
-
-            width: 100%;
-            padding: 10px;
-            border-bottom: 4px solid rgb(197, 144, 0);
-            border-radius: 10px;
-            text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px;
-            border-top-color: rgb(255, 241, 219);
-            border-right-color: rgb(255, 241, 219);
-            border-left-color: rgb(255, 241, 219);
-            padding: 12px 15px;
-            font-weight: bold;
-            background-color: rgb(238, 168, 0) !important;
+            color: #ffd299;
+            border-width: 0px;
+            border-radius: 100px;
+            font-size: 20px;
+            font-weight: 700;
+            background-image: radial-gradient(circle at center,#dd0d0d 0%,#9b1f1f 100%)!important;
+            &:hover{
+                box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
+            }
+            @media (max-width:960px){
+                font-size: 16px;
+            }
        }
-       @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
+       /* @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
             display: flex;
             display: -webkit-flex;
             display: -moz-flex;
             justify-content: center;
             align-items: center;
             .trick{
-              
                 color: #fff;
                 text-transform: uppercase;
                 width: 90%;
@@ -54,11 +51,10 @@ const Bound = styled.div`
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                /* background: #fecb27; */
                 width: 100%;
                 padding: 10px;
             }
-        }
+        } */
 `
 class Iwant extends Component {
 

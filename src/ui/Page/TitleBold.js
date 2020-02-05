@@ -8,6 +8,7 @@ const Bound = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top:10px;
     b{
         font-size: 20px;
         text-align: center;

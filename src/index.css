@@ -47,6 +47,14 @@ body {
     display: -moz-flex;
   }
 }
+/* @font-face {
+  font-family: DancingScript;
+  src: url(./font/DancingScript-Regular.woff);
+} */
+@font-face {
+  font-family: DancingScript;
+  src: url(./font/DancingScript-Medium.ttf);
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

@@ -333,14 +333,18 @@ const Bound = styled.div`
                         outline: none;
                     }
                     button{
-                        color: #000;
-                        background-color: #fecb27;
+                        background: #fecb27;
+                        text-transform: uppercase;
+                        color: #ffd299;
+                        border-width: 0px;
+                        border-radius: 100px;
+                        font-size: 20px;
+                        font-weight: 700;
+                        background-image: radial-gradient(circle at center,#dd0d0d 0%,#9b1f1f 100%)!important;
                         border: none;
-                        border-radius: 20px;
                         height: 40px;
                         width: 80%;
                         cursor: pointer;
-                        font-weight: 700;
                     }
                     @media (max-width:960px){
                         h4{
@@ -387,9 +391,7 @@ class FormRegister extends Component {
         const data = { name, phone, address: add, email: null }
        await this.props.addUser(data)
        await this.props.getSubmit(true)
-        // this.setState({
-        //     isSubmit:true
-        // })
+
     }
     render() {
         const { isSubmit } = this.state
@@ -447,8 +449,8 @@ class FormRegister extends Component {
                                             <input
                                                 onChange={this.getAdd}
                                                 type='text' placeholder='Địa chỉ nhận USB' />
-                                            <h4>"Thời điểm bạn đưa ra <span>quyết định </span>
-                                                là lúc <span>vận mệnh</span> của bạn được hình thành."</h4>
+                                            {/* <h4>"Thời điểm bạn đưa ra <span>quyết định </span>
+                                                là lúc <span>vận mệnh</span> của bạn được hình thành."</h4> */}
                                             <button type='submit'>ĐẶT MUA USB</button>
                                         </form>
                                     </React.Fragment>

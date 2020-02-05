@@ -15,6 +15,8 @@ const Bound = styled.div`
     position: relative;
     height: fit-content;
     display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
     img{
         width:100%;
     }
@@ -47,7 +49,7 @@ class BlockHeadManV2 extends Component {
     }
     getResize=()=>{
         let width = window.innerWidth
-        console.log('width',width);
+        // console.log('width',width);
         if(width>960){
             this.setState({
                 bg: laptop

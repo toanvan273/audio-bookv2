@@ -3,21 +3,27 @@ import styled from 'styled-components'
 
 const Bound = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: ${props=>props.reve?'row-reverse':'row'};
     align-items: center;
     margin-top: 15px;
+    @media (max-width:960px){
+        flex-direction: column;
+    }
 .customer-think{
     display: flex;
     display: -webkit-flex;
     display: -moz-flex;
+    flex:1;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
-    border: 1px solid rgb(174, 174, 174) !important;
-    background-color: rgba(152, 152, 152, 0.17) !important;
+    border: 1px solid rgb(174, 174, 174) ;
+    background-color: rgba(152, 152, 152, 0.17) ;
     padding: 10px;
     box-sizing: border-box;
+    margin:  ${props=>props.reve?'0 10px 0 0':'0 0 0 10px'};
+    box-shadow: 7px -8px 20px -3px rgba(108,73,153,1);
     .tic{
         font-size: 20px;
         text-align: justify;
@@ -26,13 +32,13 @@ const Bound = styled.div`
         margin-top: 5px;
     }
     @media (max-width:960px){
+        margin:  10px 0 0 0;
         .tic{
-        font-size: 14px;
-        text-align: justify
+        font-size: 15px;
         }
         h3{
-            margin-top: 0px;
-            font-weight: 600;
+            margin: 0;
+            color: #c00000;
         }
     }
 }
@@ -40,18 +46,23 @@ const Bound = styled.div`
     width: 300px;
     overflow: hidden;
     border-radius: 100%;
+    border: 3px solid #34b7a2;
+    background: #34b7a2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     img{
         width:100%;
     }
  }  
 
 `
-class App extends Component {
+class CustomerThink extends Component {
 
     render() {
-        const { people, content, image } = this.props
+        const { people, content, image , rev} = this.props
         return (
-            <Bound>
+            <Bound reve={rev}>
                 <div className='icon-customer'>
                     <img src={image} alt='image' />
                 </div>
@@ -65,4 +76,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default CustomerThink;

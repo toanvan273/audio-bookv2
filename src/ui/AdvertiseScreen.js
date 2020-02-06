@@ -19,13 +19,13 @@ import Header from './Page/Header'
 import BlockHeadManV2 from './Page/BlockHeadManV2'
 // img
 // import tieude from '../img/tieude.png'
-import ic_6 from '../img/6.jpg'
-import ic_4 from '../img/4.png'
+// import ic_6 from '../img/6.jpg'
+// import ic_4 from '../img/4.png'
 
-import ic_22 from '../img/22.jpg'
-import ic_33 from '../img/33.png'
-import ic_a from '../img/a.jpg'
-import ic_77 from '../img/77.jpg'
+// import ic_22 from '../img/22.jpg'
+// import ic_33 from '../img/33.png'
+// import ic_a from '../img/a.jpg'
+import saythankyou from '../img/book/saythankyou.png'
 import kinhdoanh from '../img/book/18kinhdoanh.jpg'
 import marketing from '../img/book/8marketing.jpg'
 import taichinh from '../img/book/19taichinh.jpg'
@@ -41,7 +41,7 @@ import nguoithanhdatkhuyendoc from '../img/benifit/nguoithanhdatkhuyendoc.png'
 import taptrunghondocsachgiay from '../img/benifit/taptrunghondocsachgiay.png'
 import thoigianranhroi from '../img/benifit/thoigianranhroi.png'
 import tietkiemchiphi from '../img/benifit/tietkiemchiphi.png'
-
+import logo from '../img/book/logo.png'
 const video1 = 'video/success.mp4'
 const Bound = styled.div`
     display:flex;
@@ -54,9 +54,13 @@ const Bound = styled.div`
         position: relative;
         height: 100px;
         display: flex;
+        @media (max-width:960px){
+            height:70px;
+        }
         .special-text{
             font-family: DancingScript;
-            color: rgb(223, 242, 246) !important;
+            color: rgb(223, 242, 246) ;
+            text-align: center;
             background: #000;
             flex:1;
             display: flex;
@@ -69,6 +73,9 @@ const Bound = styled.div`
             width: 100%;
             height: 100%;
             transition: all 0.5s;
+            @media (max-width:960px){
+                font-size: 20px;
+            }
             p{
                 text-shadow: rgb(255, 255, 255) 0px 0px 4px;
             }
@@ -142,24 +149,52 @@ const Bound = styled.div`
         margin: 10px 0;
     }
     .footer{
-        display: flex;
-        display: -webkit-flex;
-        display: -moz-flex;
-        flex-direction: column;
-        align-items: center;
-        background: #f2f2f2;
-        border: none;
-        padding: 0 10px;
-        text-align: center;
-        border-radius: 20px;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        border-radius: 10px;
+        padding: 20px 20px 20px 0;
+        box-shadow: 7px -8px 20px -3px rgba(108,73,153,1);
+        box-sizing: border-box;
+        margin: 0 10px;
+        .left-footer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 94px;
+            }
+        }
+        .right-footer{
+            .top-title{
+                border-bottom: 2px solid #ced801;
+                padding-bottom: 10px;
+                h4{
+                    margin: 0;
+                    text-transform: uppercase;
+                    font-size: 24px;
+                }
+                span{
+                    text-transform: uppercase;
+                    color: gray;
+                    font-size: 15px;
+                }
+            }
+            .content-contact{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                .item-contact{
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+            .main-content-contact{
+                display:flex;
+                flex-direction:column;
+            }
+        }
         @media (max-width:960px){
-            padding: 10px;
-          p{
-              font-size:18px;
-          }
-          h4, h5{
-              margin: 5px 0;
-          }
           
         }
     }
@@ -178,6 +213,9 @@ const Bound = styled.div`
     }
     &.thank{
         align-items: center;
+        img{
+            width:100%;
+        }
         p,h3{
             text-align:center;
         }
@@ -214,22 +252,32 @@ const Bound = styled.div`
     }
 `
 class AdvertiseScreen extends Component {
+    // dText = 0
+    innerHeight = 0
     state = {
         isSubmit: false
     }
-    componentDidMount(){
-        window.addEventListener('scroll',this.onScrollTo)
+    componentDidMount() {
+        window.addEventListener('scroll', this.onScrollTo)
+        // const distan = document.getElementById("special-text").getBoundingClientRect().top;
+        // this.dText= distan
+        this.innerHeight = window.innerHeight
+        // console.log('Did: ',distan,'-', this.innerHeight);
+
     }
-    onScrollTo=event=>{
+    onScrollTo = event => {
         var elmnt = document.getElementById("special-text")
-        let num = elmnt.getBoundingClientRect().top;
-        if(num<200){
-            elmnt.style.left=0
-            window.removeEventListener('scroll',this.onScrollTo)
+        if (elmnt) {
+            let num = elmnt.getBoundingClientRect().top;
+            // console.log(num, '-', this.dText, this.innerHeight);
+
+            if (num < this.innerHeight - 100) {
+                elmnt.style.left = 0
+                window.removeEventListener('scroll', this.onScrollTo)
+            }
         }
-        // console.log(num);
-        // console.log(window.scrollY);
-        
+
+
     }
     getSubmit = () => {
         this.setState({
@@ -268,11 +316,12 @@ class AdvertiseScreen extends Component {
             <React.Fragment>
                 {isSubmit ?
                     <Bound className='thank'>
-                        <h2>CẢM ƠN BẠN ĐÃ ĐẶT MUA USB SÁCH NÓI</h2>
+                        <img src={saythankyou} alt='saythankyou' />
+                        {/* <h2>CẢM ƠN BẠN ĐÃ ĐẶT MUA USB SÁCH NÓI</h2>
                         <h2>Chúng tôi sẽ GỌI ĐIỆN XÁC NHẬN và GIAO USB <span> đến địa chỉ của bạn</span>.</h2>
                         <h2>Bạn nhớ <span> ĐỂ Ý ĐIỆN THOẠI </span> nhé!</h2>
                         <p>Chúc bạn ngày mới vui vẻ</p>
-                        <h2>THỜI ĐIỂM BẠN RA QUYẾT ĐỊNH LÀ LÚC VẬN MỆNH CỦA BẠN ĐƯỢC HÌNH THÀNH</h2>
+                        <h2>THỜI ĐIỂM BẠN RA QUYẾT ĐỊNH LÀ LÚC VẬN MỆNH CỦA BẠN ĐƯỢC HÌNH THÀNH</h2> */}
                     </Bound>
                     :
                     <Bound>
@@ -287,6 +336,7 @@ class AdvertiseScreen extends Component {
                             <h4>Warren Buffett</h4>
                         </div>
                         <VideoControl video={video1} />
+                        <CountDown time={5400} />
                         <h3 className='what-in'>CÓ GÌ TRONG USB SÁCH NÓI NÀY ?</h3>
                         <div className='block-whatin-usb'>
                             <div className='block-item'>
@@ -387,11 +437,9 @@ class AdvertiseScreen extends Component {
                             </div>
                         </div>
                         <Iwant toBottom={this.toBottom} />
-                        <CountDown time={5400} />
-                        <TitleBold
-                            title={'Hãy gọi: 033 213 8583 để mua USB ngay!!!'}
-                            sub={"NGHE THỬ SÁCH NÓI "} />
-                     
+
+
+
                         <div id='main-audio'></div>
                         <Audio
                             title={"CHA GIÀU - CHA NGHÈO"}
@@ -416,7 +464,9 @@ class AdvertiseScreen extends Component {
                             people={'Chị Thủy Tiên'}
                             content={'Trước đây mỗi lần ra quyết định trong công việc kinh doanh của mình, tôi đều rất trần trừ, phải so đo tính toán rất nhiều lần rồi mới ra quyết định. Từ khi nghe audio book tôi đã tích lũy được rất nhiều kinh nghiệm và áp dụng được nhiều trong công việc kinh doanh. Đặc biệt sự quyết đoán trong công việc của tôi đã được cải thiện rõ rệt.'}
                         />
-                   
+                        <TitleBold
+                            title={'Hãy gọi: 033 213 8583 để mua USB ngay!!!'}
+                            sub={"NGHE THỬ SÁCH NÓI "} />
                         <h3 className='what-in'>TẠI SAO CHỌN USB SÁCH NÓI KINH DOANH - LÀM GIÀU ?</h3>
                         <div className='block-whatin-usb'>
                             <div className='block-item'>
@@ -475,7 +525,7 @@ class AdvertiseScreen extends Component {
                             <div className='special-text' id='special-text'>
                                 <p>
                                     Thời điểm bạn đưa ra quyết định là lúc vận mệnh của bạn được hình thành
-                            </p>
+                                </p>
                             </div>
                         </div>
 
@@ -484,12 +534,41 @@ class AdvertiseScreen extends Component {
                         />
                         <ProductPolicy />
                         <div className='footer' >
-                            <p>Hotline: 033 213 8583</p>
+                            <div className='left-footer'>
+                                <img src={logo} aly='logo' />
+                            </div>
+                            <div className='right-footer'>
+                                <div className='top-title'>
+                                    <h4>Viba Shop</h4>
+                                    <span>Đưa bạn đến thành công</span>
+                                </div>
+                                <div className='main-content-contact'>
+                                    <div className='content-contact'>
+                                        <div className='item-contact'>
+                                            facebook.com/TrituexanhVIBA
+                                    </div>
+                                        <div className='item-contact'>
+                                            https://usb-book.web.app/
+                                    </div>
+                                        <div className='item-contact'>
+                                            +84 33 213 8583
+                                    </div>
+                                        <div className='item-contact'>
+                                            71 Đa Sỹ, Kiến Hưng, Hà Đông, Hà Nội
+                                        </div>
+                                    </div>
+                                    <Iwant toBottom={this.toBottom} />
+                                </div>
+
+                            </div>
+
+
+                            {/* <p>Hotline: 033 213 8583</p>
                             <p>Đ/c: Số 71, Đa Sỹ, Kiến Hưng, Hà Đông, Hà Nội</p>
                             <h4>HÃY MUA NGAY BỘ SÁCH SỐ 1 THẾ GIỚI VÀ LẮNG NGHE CÁC CÂU CHUYỆN THÀNH CÔNG HÀNG NGÀY.</h4>
                             <h4> TƯƠNG LAI ĐANG HOÀN TOÀN Ở TRONG TAY BẠN!</h4>
                             <h5> THỜI ĐIỂM BẠN RA QUYẾT ĐỊNH.</h5>
-                            <h5>LÀ LÚC VẬN MỆNH CỦA BẠN ĐƯỢC HÌNH THÀNH!</h5>
+                            <h5>LÀ LÚC VẬN MỆNH CỦA BẠN ĐƯỢC HÌNH THÀNH!</h5> */}
 
                         </div>
                         <h1>Copyright © 2019: USB sách nói - Bí Quyết Thành Công</h1>

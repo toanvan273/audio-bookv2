@@ -75,17 +75,18 @@ const Bound = styled.div`
                 height: 30px;
                 border: none;
                 border-radius: 20px;
-                background: #1296a3;
+                /* background: #1296a3; */
                 color: #fff;
                 cursor: pointer;
+                background-image: radial-gradient(circle at center,#19d3e5 0%,#1296a3 100%);
             }
             .buy{
                 width: 80px;
                 height: 30px;
                 border-radius: 20px;
                 border: none;
-                background: orange;
-                /* color: #fff; */
+                background-image: radial-gradient(circle at center,#dd0d0d 0%,#9b1f1f 100%);
+                color: #ffd299;
                 cursor: pointer;
             }
         }

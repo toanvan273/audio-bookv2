@@ -10,7 +10,7 @@ const Bound = styled.div`
        .trick{
             padding: 10px 30px;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 10px;
             display: flex;
             display: -webkit-flex;
             display: -moz-flex;
@@ -62,8 +62,8 @@ class Iwant extends Component {
         return (
             <Bound onClick={()=>{this.props.toBottom()}}>
                 <div className='trick' >
-                <p>Tôi muốn sở hữu USB</p>
-                <b>(Chỉ còn duy nhất 29 USB)</b>
+                <p>Đăng ký mua ngay</p>
+                {/* <b>(Chỉ còn duy nhất 29 USB)</b> */}
                 </div>
                
             </Bound>

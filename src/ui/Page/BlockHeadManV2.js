@@ -38,6 +38,34 @@ const Bound = styled.div`
         display: flex;
         justify-content: flex-end;
     }
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){
+        position: relative;
+        height: fit-content;
+        display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
+        img{
+            width:100%;
+        }
+        .fit-content{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-row-gap: 10px;
+            @media (max-width:960px){
+                grid-row-gap: 0px;
+            }
+        }
+        .div-left{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
 `
 class BlockHeadManV2 extends Component {
     state={

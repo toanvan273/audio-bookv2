@@ -13,13 +13,14 @@ const Bound = styled.div`
         font-size: 20px;
         text-align: center;
         color: #fff;
-        border-bottom: 4px solid rgb(169, 20, 0);
+        /* border-bottom: 4px solid rgb(169, 20, 0); */
         border-radius: 10px;
         text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px;
         font-weight: bold;
-        background-image: none;
-        background-color: rgb(210, 27, 8);
-        padding: 14px 35px !important;
+        /* background-color: rgb(210, 27, 8); */
+        padding: 14px 35px ;
+        color: #ffd299;
+        background-image: radial-gradient(circle at center,#dd0d0d 0%,#9b1f1f 100%)!important;
         text-transform: uppercase;
         @media (max-width:960px){
         font-size: 18px;
@@ -46,7 +47,7 @@ const Bound = styled.div`
         }
     }
 `
-class App extends Component {
+class TitleBold extends Component {
 
     render() {
         const { title, sub } = this.props
@@ -62,4 +63,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default TitleBold;

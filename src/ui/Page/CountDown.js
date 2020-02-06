@@ -24,7 +24,6 @@ const Bound = styled.div`
         display: -moz-flex;
         flex-direction: column;
         align-items: center;
-      
         p{
             color: #ffd299;
             padding: 10px;
@@ -32,9 +31,6 @@ const Bound = styled.div`
             font-size: 36px;
             border-radius: 10px;
             text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px;
-            /* border-top-color: rgb(255, 241, 219);
-            border-right-color: rgb(255, 241, 219);
-            border-left-color: rgb(255, 241, 219); */
             padding: 12px 15px;
             font-weight: bold !important;
             background-image: radial-gradient(circle at center,#dd0d0d 0%,#9b1f1f 100%)!important;

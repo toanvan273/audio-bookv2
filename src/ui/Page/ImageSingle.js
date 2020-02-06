@@ -10,7 +10,7 @@ const Bound = styled.div`
     margin-top: 20px;
     img{
         width: 100%;
-        border: 5px solid #aa721a;
+        /* border: 5px solid #aa721a; */
     }
     @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
         display: flex;
@@ -21,11 +21,11 @@ const Bound = styled.div`
         margin-top: 20px;
         img{
             width: 100%;
-            border: 5px solid #aa721a;
+            /* border: 5px solid #aa721a; */
         }
     }
 `
-class App extends Component {
+class ImageSingle extends Component {
 
     render() {
         const { imgLink } = this.props
@@ -37,4 +37,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default ImageSingle;

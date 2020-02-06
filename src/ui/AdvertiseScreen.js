@@ -16,15 +16,9 @@ import FormRegister from './Page/FormRegister'
 import ProductPolicy from './Page/ProductPolicy'
 import Header from './Page/Header'
 // import BlockHeadMan from './Page/BlockHeadMan'
-import BlockHeadManV2 from './Page/BlockHeadManV2'
+// import BlockHeadManV2 from './Page/BlockHeadManV2'
 // img
-// import tieude from '../img/tieude.png'
-// import ic_6 from '../img/6.jpg'
-// import ic_4 from '../img/4.png'
 
-// import ic_22 from '../img/22.jpg'
-// import ic_33 from '../img/33.png'
-// import ic_a from '../img/a.jpg'
 import saythankyou from '../img/book/saythankyou.png'
 import kinhdoanh from '../img/book/18kinhdoanh.jpg'
 import marketing from '../img/book/8marketing.jpg'
@@ -42,6 +36,13 @@ import taptrunghondocsachgiay from '../img/benifit/taptrunghondocsachgiay.png'
 import thoigianranhroi from '../img/benifit/thoigianranhroi.png'
 import tietkiemchiphi from '../img/benifit/tietkiemchiphi.png'
 import logo from '../img/book/logo.png'
+import mobile from '../img/coreformoblie.png'
+import laptop from '../img/coreforlaptop.png'
+//
+import diachi from '../img/icon/diachi.png'
+import facebook from '../img/icon/facebook.png'
+import phone from '../img/icon/phone.png'
+import web from '../img/icon/web.png'
 const video1 = 'video/success.mp4'
 const Bound = styled.div`
     display:flex;
@@ -156,6 +157,20 @@ const Bound = styled.div`
         box-shadow: 7px -8px 20px -3px rgba(108,73,153,1);
         box-sizing: border-box;
         margin: 0 10px;
+        @media (max-width:960px){
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            .right-footer{
+                .top-title{
+                    text-align: center;
+                }
+                .content-contact{
+                    display: flex !important;
+                    flex-direction: column;
+                }
+            }
+        }   
         .left-footer{
             display: flex;
             align-items: center;
@@ -187,6 +202,26 @@ const Bound = styled.div`
                     height: 40px;
                     display: flex;
                     align-items: center;
+                    .iconfa{
+                        position: relative;
+                        margin-right: 10px;
+                        img{
+                            margin:0;
+                        }
+                        span{
+                            font-size: 22px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            font-weight: 900;
+                            transform: translate(-50%,-50%);
+                            color: #fff;
+                        }
+                    }
+                    img{
+                        width: 30px;
+                        margin-right: 10px;
+                    }
                 }
             }
             .main-content-contact{
@@ -255,13 +290,24 @@ class AdvertiseScreen extends Component {
     // dText = 0
     innerHeight = 0
     state = {
-        isSubmit: false
+        isSubmit: false,
+        bg: ''
     }
     componentDidMount() {
         window.addEventListener('scroll', this.onScrollTo)
         // const distan = document.getElementById("special-text").getBoundingClientRect().top;
         // this.dText= distan
         this.innerHeight = window.innerHeight
+        let innerWidth = window.innerWidth
+        if (innerWidth > 960) {
+            this.setState({
+                bg: laptop
+            })
+        } else {
+            this.setState({
+                bg: mobile
+            })
+        }
         // console.log('Did: ',distan,'-', this.innerHeight);
 
     }
@@ -269,15 +315,11 @@ class AdvertiseScreen extends Component {
         var elmnt = document.getElementById("special-text")
         if (elmnt) {
             let num = elmnt.getBoundingClientRect().top;
-            // console.log(num, '-', this.dText, this.innerHeight);
-
             if (num < this.innerHeight - 100) {
                 elmnt.style.left = 0
                 window.removeEventListener('scroll', this.onScrollTo)
             }
         }
-
-
     }
     getSubmit = () => {
         this.setState({
@@ -317,18 +359,15 @@ class AdvertiseScreen extends Component {
                 {isSubmit ?
                     <Bound className='thank'>
                         <img src={saythankyou} alt='saythankyou' />
-                        {/* <h2>CẢM ƠN BẠN ĐÃ ĐẶT MUA USB SÁCH NÓI</h2>
-                        <h2>Chúng tôi sẽ GỌI ĐIỆN XÁC NHẬN và GIAO USB <span> đến địa chỉ của bạn</span>.</h2>
-                        <h2>Bạn nhớ <span> ĐỂ Ý ĐIỆN THOẠI </span> nhé!</h2>
-                        <p>Chúc bạn ngày mới vui vẻ</p>
-                        <h2>THỜI ĐIỂM BẠN RA QUYẾT ĐỊNH LÀ LÚC VẬN MỆNH CỦA BẠN ĐƯỢC HÌNH THÀNH</h2> */}
+
                     </Bound>
                     :
                     <Bound>
                         <div className='header'>
                             <Header getKey={this.getKeyScroll} />
                             <h3 className='what-in'>5 GIÁ TRỊ TỪ BỘ SÁCH NÀY</h3>
-                            <BlockHeadManV2 />
+                            {/* <BlockHeadManV2 /> */}
+                            < ImageSigle imgLink={this.state.bg} />
                         </div>
                         <div className='line'></div>
                         <div className='title-video'>
@@ -436,7 +475,7 @@ class AdvertiseScreen extends Component {
                                 </div>
                             </div>
                         </div>
-                        <Iwant toBottom={this.toBottom} />
+                        {/* <Iwant toBottom={this.toBottom} /> */}
 
 
 
@@ -545,30 +584,34 @@ class AdvertiseScreen extends Component {
                                 <div className='main-content-contact'>
                                     <div className='content-contact'>
                                         <div className='item-contact'>
-                                            facebook.com/TrituexanhVIBA
-                                    </div>
+                                            <div className='iconfa'>
+                                            <img src={facebook} alt='i' />
+                                            <span>f</span>
+                                            </div>
+                                           
+                                            <span>facebook.com/TrituexanhVIBA</span>
+
+                                        </div>
                                         <div className='item-contact'>
-                                            https://usb-book.web.app/
-                                    </div>
+                                            <img src={web} alt='i' />
+                                            <span>usb-book.web.app</span>
+
+                                        </div>
                                         <div className='item-contact'>
-                                            +84 33 213 8583
-                                    </div>
+                                            <img src={phone} alt='i' />
+                                            <span> +84 33 213 8583</span>
+
+                                        </div>
                                         <div className='item-contact'>
-                                            71 Đa Sỹ, Kiến Hưng, Hà Đông, Hà Nội
+                                            <img src={diachi} alt='i' />
+                                            <span>71 Đa Sỹ, Kiến Hưng, Hà Đông, Hà Nội</span>
+
                                         </div>
                                     </div>
                                     <Iwant toBottom={this.toBottom} />
                                 </div>
 
                             </div>
-
-
-                            {/* <p>Hotline: 033 213 8583</p>
-                            <p>Đ/c: Số 71, Đa Sỹ, Kiến Hưng, Hà Đông, Hà Nội</p>
-                            <h4>HÃY MUA NGAY BỘ SÁCH SỐ 1 THẾ GIỚI VÀ LẮNG NGHE CÁC CÂU CHUYỆN THÀNH CÔNG HÀNG NGÀY.</h4>
-                            <h4> TƯƠNG LAI ĐANG HOÀN TOÀN Ở TRONG TAY BẠN!</h4>
-                            <h5> THỜI ĐIỂM BẠN RA QUYẾT ĐỊNH.</h5>
-                            <h5>LÀ LÚC VẬN MỆNH CỦA BẠN ĐƯỢC HÌNH THÀNH!</h5> */}
 
                         </div>
                         <h1>Copyright © 2019: USB sách nói - Bí Quyết Thành Công</h1>

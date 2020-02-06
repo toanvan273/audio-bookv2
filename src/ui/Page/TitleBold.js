@@ -13,11 +13,9 @@ const Bound = styled.div`
         font-size: 20px;
         text-align: center;
         color: #fff;
-        /* border-bottom: 4px solid rgb(169, 20, 0); */
         border-radius: 10px;
         text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px;
         font-weight: bold;
-        /* background-color: rgb(210, 27, 8); */
         padding: 14px 35px ;
         color: #ffd299;
         background-image: radial-gradient(circle at center,#dd0d0d 0%,#9b1f1f 100%)!important;

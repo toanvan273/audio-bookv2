@@ -558,7 +558,7 @@ class AdvertiseScreen extends Component {
                                 />
                             </div>
                         </div>
-                        <Iwant toBottom={this.toBottom} />
+                        {/* <Iwant toBottom={this.toBottom} /> */}
                         <FormRegister getSubmit={this.getSubmit} />
                         <div className='block-special-text' >
                             <div className='special-text' id='special-text'>

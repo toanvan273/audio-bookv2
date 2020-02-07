@@ -19,7 +19,8 @@ import Header from './Page/Header'
 // import BlockHeadManV2 from './Page/BlockHeadManV2'
 // img
 
-import saythankyou from '../img/book/saythankyou.png'
+import lapthankyou from '../img/book/saythankyou.png'
+import phonethank from '../img/book/thankphone.png'
 import kinhdoanh from '../img/book/18kinhdoanh.jpg'
 import marketing from '../img/book/8marketing.jpg'
 import taichinh from '../img/book/19taichinh.jpg'
@@ -252,6 +253,8 @@ const Bound = styled.div`
         }
     }
     &.thank{
+        display: flex;
+        justify-content: center;
         align-items: center;
         img{
             width:100%;
@@ -322,8 +325,9 @@ class AdvertiseScreen extends Component {
     // dText = 0
     innerHeight = 0
     state = {
-        isSubmit: false,
-        bg: ''
+        isSubmit: true,
+        bg: '',
+        bgthank:''
     }
     componentDidMount() {
         window.addEventListener('scroll', this.onScrollTo)
@@ -333,11 +337,13 @@ class AdvertiseScreen extends Component {
         let innerWidth = window.innerWidth
         if (innerWidth > 960) {
             this.setState({
-                bg: laptop
+                bg: laptop,
+                bgthank: lapthankyou
             })
         } else {
             this.setState({
-                bg: mobile
+                bg: mobile,
+                bgthank: phonethank
             })
         }
 
@@ -384,13 +390,12 @@ class AdvertiseScreen extends Component {
         }
     }
     render() {
-        const { isSubmit } = this.state
+        const { isSubmit ,bgthank } = this.state
         return (
             <React.Fragment>
                 {isSubmit ?
                     <Bound className='thank'>
-                        <img src={saythankyou} alt='saythankyou' />
-
+                        <img src={bgthank} alt='saythankyou' />
                     </Bound>
                     :
                     <Bound>

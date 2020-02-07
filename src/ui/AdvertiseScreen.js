@@ -325,7 +325,7 @@ class AdvertiseScreen extends Component {
     // dText = 0
     innerHeight = 0
     state = {
-        isSubmit: true,
+        isSubmit: false,
         bg: '',
         bgthank:''
     }

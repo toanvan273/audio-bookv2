@@ -117,7 +117,7 @@ class Header extends Component {
                         <p>HAY NHẤT MỌI THỜI ĐẠI</p>
                     </div>
                     <div className='content'>
-                        <p>Chiếc USB này chứa những quyển sách vĩ đại về kinh doanh được tạp chí New York bình chọn
+                        <p>Chiếc USB này chứa những quyển sách vĩ đại về kinh doanh được tạp chí New York Times bình chọn
                             giúp đạt được giấc mơ làm giàu của bất kỳ ai may mắn sở hữu nó!
                         </p>
                     </div>

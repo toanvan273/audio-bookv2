@@ -43,6 +43,9 @@ import diachi from '../img/icon/diachi.png'
 import facebook from '../img/icon/facebook.png'
 import phone from '../img/icon/phone.png'
 import web from '../img/icon/web.png'
+// au
+import au1 from '../img/book/au1.jpg'
+import au2 from '../img/book/au2.jpg'
 const video1 = 'video/success.mp4'
 const Bound = styled.div`
     display:flex;
@@ -89,9 +92,10 @@ const Bound = styled.div`
         padding: 0 5px;
         overflow-y: auto;
         h1{
-        font-size: 20px;
+        font-size: 12px;
         text-align: center;
-        }
+        color: gray;
+    }
     }
     .main-title{
         img{
@@ -170,6 +174,7 @@ const Bound = styled.div`
                     flex-direction: column;
                 }
             }
+           
         }   
         .left-footer{
             display: flex;
@@ -285,6 +290,33 @@ const Bound = styled.div`
             }
         }
     }
+    .main-content-audio{
+        display: grid;
+        grid-template-columns: 49% 49%;
+        grid-gap: 2%;
+        padding: 20px;
+    /* background: #f2f2f2; */
+        @media (max-width:960px){
+            display: flex;
+            flex-direction: column;
+            .audio-item:last-child{
+                margin-top:15px;
+            }
+        }
+        .audio-item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          
+            .book-image{
+                width: 95px;
+                height: 160px;
+                img{
+                    width:100%;
+                }
+            }
+        }
+    }
 `
 class AdvertiseScreen extends Component {
     // dText = 0
@@ -308,7 +340,6 @@ class AdvertiseScreen extends Component {
                 bg: mobile
             })
         }
-        // console.log('Did: ',distan,'-', this.innerHeight);
 
     }
     onScrollTo = event => {
@@ -475,19 +506,32 @@ class AdvertiseScreen extends Component {
                                 </div>
                             </div>
                         </div>
-                        {/* <Iwant toBottom={this.toBottom} /> */}
-
-
-
+                        <h3 className='what-in'>NGHE THỬ SÁCH NÓI</h3>
                         <div id='main-audio'></div>
-                        <Audio
-                            title={"CHA GIÀU - CHA NGHÈO"}
-                            link={'https://168trends.com/wp-content/uploads/2019/09/USB-Sách-Nói-Tủ-sách-Kinh-doanh-làm-giàu-hay-nhất-mọi-thời-đại-Usb-sách-nói.mp3'}
-                        />
-                        <Audio
-                            title={"NGƯỜI GIÀU CÓ NHẤT THÀNH BABYLON"}
-                            link={'https://168trends.com/wp-content/uploads/2019/09/USB-Sách-Nói-Tủ-sách-Kinh-doanh-làm-giàu-hay-nhất-mọi-thời-đại-Usb-sách-nói_2.mp3'}
-                        />
+                        <div className='main-content-audio'>
+                            <div className='audio-item'>
+                                <div className='book-image'>
+                                        <img src={au1} alt='au' />
+                                </div>
+                                <Audio
+                                    author={'Sharon Lechter, Robert Kiyosaki'}
+                                    title={"CHA GIÀU - CHA NGHÈO"}
+                                    link={'https://168trends.com/wp-content/uploads/2019/09/USB-Sách-Nói-Tủ-sách-Kinh-doanh-làm-giàu-hay-nhất-mọi-thời-đại-Usb-sách-nói.mp3'}
+                                />
+                            </div>
+                            <div className='audio-item'>
+                                <div className='book-image'>
+                                <img src={au2} alt='au' />
+                                </div>
+                                <Audio
+                                    author={'Sách của George Samuel Clason'}
+                                    title={"NGƯỜI GIÀU CÓ NHẤT THÀNH BABYLON"}
+                                    link={'https://168trends.com/wp-content/uploads/2019/09/USB-Sách-Nói-Tủ-sách-Kinh-doanh-làm-giàu-hay-nhất-mọi-thời-đại-Usb-sách-nói_2.mp3'}
+                                />
+                            </div>
+                        </div>
+
+
                         <TitleIn
                             title={'Cảm nhận khách hàng'}
                             sub={'Ý kiến khách hàng đã mua và nghe USB sách nói của chúng tôi'}
@@ -505,7 +549,7 @@ class AdvertiseScreen extends Component {
                         />
                         <TitleBold
                             title={'Hãy gọi: 033 213 8583 để mua USB ngay!!!'}
-                            sub={"NGHE THỬ SÁCH NÓI "} />
+                        />
                         <h3 className='what-in'>TẠI SAO CHỌN USB SÁCH NÓI KINH DOANH - LÀM GIÀU ?</h3>
                         <div className='block-whatin-usb'>
                             <div className='block-item'>
@@ -585,10 +629,10 @@ class AdvertiseScreen extends Component {
                                     <div className='content-contact'>
                                         <div className='item-contact'>
                                             <div className='iconfa'>
-                                            <img src={facebook} alt='i' />
-                                            <span>f</span>
+                                                <img src={facebook} alt='i' />
+                                                <span>f</span>
                                             </div>
-                                           
+
                                             <span>facebook.com/TrituexanhVIBA</span>
 
                                         </div>

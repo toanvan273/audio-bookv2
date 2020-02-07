@@ -8,16 +8,13 @@ const Bound = styled.div`
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        /* @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
-            display: flex;
-            display: -webkit-flex;
-            display: -moz-flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        } */
+        width: 100%;
         audio{
             width: 100%;
+            margin-top: 10px;
+        }
+        p{
+            color: #6d6d6d;
         }
         @media (max-width:960px){
             .tic{
@@ -28,6 +25,7 @@ const Bound = styled.div`
                 font-size: 18px;
                 margin-top: 10px;
                 font-weight: 600;
+                font-family: roboto,sans-serif;
                 text-align: center;
                 margin-bottom: 0;
             }
@@ -36,10 +34,11 @@ const Bound = styled.div`
 class App extends Component {
 
     render() {
-        const { link, title } = this.props
+        const { link, title, author } = this.props
         return (
             <Bound>
                 <h3>{title}</h3>
+                <p>{author}</p>
                 <audio controls >
                     <source src={link} type="audio/mpeg" />
                 </audio>

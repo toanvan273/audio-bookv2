@@ -64,9 +64,10 @@ const Bound = styled.div`
                 .sale-off{
                     text-align: center;
                     padding: 10px 0;
-                    background: #fecb27;
-                    font-size: 26px;
                     color: #000;
+                    background-image: radial-gradient(circle at center,#dd0d0d 0%,#9b1f1f 100%)!important;
+                    color: #fecb27;
+                    font-size: 26px;
                     @media (max-width:960px){
                         margin: 0px;
                     }
@@ -256,9 +257,9 @@ const Bound = styled.div`
             .sale-off{
                 text-align: center;
                 padding: 10px 0;
-                background: #fecb27;
                 font-size: 26px;
-                color: #000;
+                background-image: radial-gradient(circle at center,#dd0d0d 0%,#9b1f1f 100%)!important;
+                color: #fecb27;
                 @media (max-width:960px){
                     margin: 0px;
                 }

@@ -394,8 +394,8 @@ class AdvertiseScreen extends Component {
         return (
             <React.Fragment>
                 {isSubmit ?
-                    <Bound className='thank'>
-                        <img src={bgthank} alt='saythankyou' />
+                    <Bound className='thank' >
+                        <img src={bgthank} alt='saythankyou' id='mainthank01'/>
                     </Bound>
                     :
                     <Bound>

@@ -405,7 +405,7 @@ class FormRegister extends Component {
 
     }
     render() {
-        const { isSubmit, noti } = this.state
+        const { noti } = this.state
         // console.log('render :', noti, this.state);
 
         return (
@@ -449,33 +449,25 @@ class FormRegister extends Component {
                                         <span> Xe hơi</span>
                                     </p>
                                 </div>
-                                {!isSubmit ?
-                                    <React.Fragment>
-                                        <h4>Chỉ cần để lại thông tin, sẽ có nhân viên tư vấn gọi điện lại cho bạn để xác nhận đơn hàng(trong giờ hành chính)</h4>
-                                        <form onSubmit={this.onFormSubmit} >
-                                            <input
-                                                onChange={this.getName}
-                                                type="text" placeholder='Họ và tên' />
-                                            <input
-                                                onChange={this.getPhone}
-                                                type='text' placeholder='Số điện thoại' />
-                                            <input
-                                                onChange={this.getAdd}
-                                                type='text' placeholder='Địa chỉ nhận USB' />
-                                            {noti &&
-                                                <p style={{ color: 'red', marginBottom: '5px' }} >{noti}</p>
-                                            }
-                                            <button type='submit'>ĐẶT MUA USB</button>
-                                        </form>
-                                    </React.Fragment>
-                                    :
-                                    <React.Fragment>
-                                        <div className='submited'>
-                                            <h2>Cám ơn bạn đã để lại thông tin.</h2>
-                                        </div>
-                                    </React.Fragment>
 
-                                }
+                                <React.Fragment>
+                                    <h4>Chỉ cần để lại thông tin, sẽ có nhân viên tư vấn gọi điện lại cho bạn để xác nhận đơn hàng(trong giờ hành chính)</h4>
+                                    <form onSubmit={this.onFormSubmit} >
+                                        <input
+                                            onChange={this.getName}
+                                            type="text" placeholder='Họ và tên' />
+                                        <input
+                                            onChange={this.getPhone}
+                                            type='text' placeholder='Số điện thoại' />
+                                        <input
+                                            onChange={this.getAdd}
+                                            type='text' placeholder='Địa chỉ nhận USB' />
+                                        {noti &&
+                                            <p style={{ color: 'red', marginBottom: '5px' }} >{noti}</p>
+                                        }
+                                        <button type='submit'>ĐẶT MUA USB</button>
+                                    </form>
+                                </React.Fragment>
 
                             </div>
                         </div>

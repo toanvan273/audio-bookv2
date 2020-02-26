@@ -369,7 +369,8 @@ const Bound = styled.div`
 
 class FormRegister extends Component {
     state = {
-        isSubmit: false
+        isSubmit: false,
+        noti: null
     }
     getName = e => {
         this.setState({
@@ -390,12 +391,23 @@ class FormRegister extends Component {
         e.preventDefault()
         const { name, phone, add } = this.state
         const data = { name, phone, address: add, email: null }
-       await this.props.addUser(data)
-       await this.props.getSubmit(true)
+        // console.log('data', data);
+        if (name && phone && add) {
+            await this.props.addUser(data)
+            await this.props.getSubmit(true)
+        } else {
+            // console.log(0);
+            this.setState({
+                noti: 'Vui lòng nhập đủ các trường !'
+            })
+        }
+
 
     }
     render() {
-        const { isSubmit } = this.state
+        const { isSubmit, noti } = this.state
+        // console.log('render :', noti, this.state);
+
         return (
             <Bound id="content-form">
                 <div className='grid-container'>
@@ -450,8 +462,9 @@ class FormRegister extends Component {
                                             <input
                                                 onChange={this.getAdd}
                                                 type='text' placeholder='Địa chỉ nhận USB' />
-                                            {/* <h4>"Thời điểm bạn đưa ra <span>quyết định </span>
-                                                là lúc <span>vận mệnh</span> của bạn được hình thành."</h4> */}
+                                            {noti &&
+                                                <p style={{ color: 'red', marginBottom: '5px' }} >{noti}</p>
+                                            }
                                             <button type='submit'>ĐẶT MUA USB</button>
                                         </form>
                                     </React.Fragment>
